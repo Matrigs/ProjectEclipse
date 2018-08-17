@@ -1,0 +1,401 @@
+fileFormatVersion: 2
+guid: 888a2ce3edd55f54b86c312007301e56
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Isis_sheet3_0
+    21300002: Isis_sheet3_1
+    21300004: Isis_sheet3_2
+    21300006: Isis_sheet3_3
+    21300008: Isis_sheet3_4
+    21300010: Isis_sheet3_6
+    21300012: Isis_sheet3_7
+    21300014: Isis_sheet3_8
+    21300016: Isis_sheet3_9
+    21300018: Isis_sheet3_11
+    21300020: Isis_sheet3_12
+    21300022: Isis_sheet3_13
+    21300024: Isis_sheet3_14
+  externalObjects: {}
+  serializedVersion: 5
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Isis_sheet3_0
+      rect:
+        serializedVersion: 2
+        x: 71.81193
+        y: 1312.9711
+        width: 427.2025
+        height: 520.4408
+      alignment: 9
+      pivot: {x: 0.496692, y: 0.49771068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd236bc16ff2264aa72461e6f07b23d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_1
+      rect:
+        serializedVersion: 2
+        x: 583.6003
+        y: 1336
+        width: 326.39972
+        height: 485
+      alignment: 9
+      pivot: {x: 0.5052079, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affcd610c979cb04b8e9093206a11fbf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_2
+      rect:
+        serializedVersion: 2
+        x: 1001.00006
+        y: 1021
+        width: 269.99994
+        height: 802
+      alignment: 9
+      pivot: {x: 0.49999988, y: 0.49875313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a32626912439349949cf6878301618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_3
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 1364
+        width: 447
+        height: 460
+      alignment: 9
+      pivot: {x: 0.49888143, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5266f1e2f6470f648a770addd8221914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_4
+      rect:
+        serializedVersion: 2
+        x: 73.000015
+        y: 49
+        width: 435
+        height: 1177
+      alignment: 9
+      pivot: {x: 0.49885052, y: 0.5008496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ef1a39dbf916e4a86c1831e2efdf9c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_6
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 60
+        width: 489
+        height: 1154
+      alignment: 9
+      pivot: {x: 0.5030675, y: 0.50043327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d50af5c60003e4c99ad33d9486f179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_7
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 919
+        width: 316
+        height: 405
+      alignment: 9
+      pivot: {x: 0.50158226, y: 0.5024692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01864b8c098bb114f9d4036611b10314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_8
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 96
+        width: 309
+        height: 802
+      alignment: 9
+      pivot: {x: 0.49838188, y: 0.49875313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3070ff3ec350b349b5fc4eef1244885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_9
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 537
+        width: 89
+        height: 53
+      alignment: 9
+      pivot: {x: 0.5168539, y: 0.509434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf53d3750c94694497f291979ee72c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_11
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 324
+        width: 58
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06ab77dec76ac8439eef64ec3e1e57a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_12
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 291
+        width: 42
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb736844e341ed46b7c3984a37d6d67
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_13
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 176
+        width: 75
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c866c4e5a79c24c97f834443a52b05
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Isis_sheet3_14
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 196
+        width: 90
+        height: 70
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89b24d46ff472441b056a2fe6b601d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: fbdf5941ae80e8b41ab4cdf58788bd93
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  userData: 636650543580000000
+  assetBundleName: 
+  assetBundleVariant: 

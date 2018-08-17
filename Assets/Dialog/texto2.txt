@@ -1,0 +1,2 @@
+﻿NPC:Lorem ipsum semper lacus aptent;
+Player: Lorem ipsum semper lacus aptent;
