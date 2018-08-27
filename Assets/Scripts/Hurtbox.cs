@@ -15,7 +15,7 @@ public class Hurtbox : MonoBehaviour {
 		ChangeHPText();
 	}
 
-	public void TakeDamage(int Damage)
+	public virtual void TakeDamage(int Damage)
 	{
 		if(hurtboxState == _state.Open)	
 		{
