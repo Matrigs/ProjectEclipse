@@ -9,6 +9,8 @@ public class PlayerComponent : MonoBehaviour {
     public delegate void playerAction();
     public static event playerAction ActionButton;
 
+	public Animator animator;
+
     [Header("Debug?")]
 	public bool debug;
 
@@ -65,11 +67,13 @@ public class PlayerComponent : MonoBehaviour {
 	void Update() {
 		RecalculatePhysics(debug);
 		CalculateVelocity ();
+		animator.SetFloat ("Speed", Mathf.Abs(velocityXSmoothing));
 
 		controller.Move (velocity * Time.deltaTime);
 		if (controller.collisionsInf.above || controller.collisionsInf.below) {
 			velocity.y = 0;
 		}
+
 	}
 
 	public void SetDirectionalInput (Vector2 input) {
@@ -114,7 +118,7 @@ public class PlayerComponent : MonoBehaviour {
     {
         ActionButton();
 		StartCoroutine(DoMeleeAttack(activeAttackTime));
-		
+		animator.SetBool ("Action", true);
     }
 	IEnumerator DoMeleeAttack(float activeTime)
 	{
@@ -123,5 +127,6 @@ public class PlayerComponent : MonoBehaviour {
 		yield return new WaitForSeconds(activeTime);
 		meleeAtt.stopCheckingCollision();
 		Debug.Log("STOP ATTACK");
+		animator.SetBool ("Action", false);
 	}
 }
