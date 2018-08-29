@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
 
 	public GameObject Bullet;
+	public float timeOfShots;
 	void Start () 
 	{
 		StartCoroutine(ShootRoutine());
@@ -13,7 +14,7 @@ public class Shoot : MonoBehaviour {
 	{
 		for(;;)
 		{
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(timeOfShots);
 			Instantiate(Bullet,transform.position + new Vector3(0,0.2f,0),Quaternion.identity);
 		}
 	}
