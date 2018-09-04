@@ -208,6 +208,8 @@ public class Controller2D : RaycastController {
 	public void ChangeDir()
 	{
 		facingRight = !facingRight;
+		//BoxCollider2D charCollider;
+		//charCollider.offset.x = -charCollider.offset.x;
 	}
 
 	public struct CollisionInfo

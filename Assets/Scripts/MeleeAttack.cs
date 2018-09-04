@@ -26,7 +26,7 @@ public class MeleeAttack : MonoBehaviour
 
 	private ColliderState _state;
     public PlayerCharacter character;
-	
+
 	void Update () 
 	{
 		UpdateDir();
@@ -62,6 +62,9 @@ public class MeleeAttack : MonoBehaviour
 	private void UpdateDir()
 	{
 		facingRight = col2D.facingRight;
+		if (facingRight == !facingRight) {
+			attackBoxOffset.x = -attackBoxOffset.x;
+		}
 	}
 
 	public enum ColliderState 
