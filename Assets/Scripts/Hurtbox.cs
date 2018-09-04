@@ -8,14 +8,14 @@ public class Hurtbox : MonoBehaviour {
 	public float recoverTime;
 	public int HP;
 	[SerializeField]
-	private _state hurtboxState;
+	protected _state hurtboxState;
 
 	void OnEnable()
 	{
 		ChangeHPText();
 	}
 
-	public virtual void TakeDamage(int Damage)
+	public virtual void TakeDamage(int Damage, MeleeAttack.PlayerCharacter character)
 	{
 		if(hurtboxState == _state.Open)	
 		{
@@ -32,17 +32,17 @@ public class Hurtbox : MonoBehaviour {
 	}
 
 
-	private IEnumerator Recover(float time)
+	protected IEnumerator Recover(float time)
 	{
 		yield return new WaitForSeconds(time);
 		hurtboxState = _state.Open;
 		ChangeColorState();
 	}
-	private void ChangeHPText()
+	protected void ChangeHPText()
 	{
 		lifeText.text = HP.ToString();
 	}
-	private void ChangeColorState()
+    protected void ChangeColorState()
 	{
 		SpriteRenderer sprend = GetComponent<SpriteRenderer>();
 

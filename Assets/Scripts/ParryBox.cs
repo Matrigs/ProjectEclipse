@@ -6,12 +6,27 @@ using UnityEngine;
 public class ParryBox : Hurtbox {
     private bool _parried = false;
 
-    public override void TakeDamage(int Damage)
+    public override void TakeDamage(int Damage, MeleeAttack.PlayerCharacter character)
     {
-        if (!_parried)
+        if (!_parried && character == MeleeAttack.PlayerCharacter.Luna)
         {
             GetComponent<Bullet>().velocity *= -1;
             _parried = true;
+        }
+        else
+        {
+            if (hurtboxState == _state.Open)
+            {
+                HP -= Damage;
+                hurtboxState = _state.Closed;
+                ChangeColorState();
+                ChangeHPText();
+                StartCoroutine(Recover(recoverTime));
+            }
+            if (HP <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

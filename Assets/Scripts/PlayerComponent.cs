@@ -47,8 +47,8 @@ public class PlayerComponent : MonoBehaviour {
 	Controller2D controller;
 
 	Vector2 directionalInput;
-	[SerializeField]
-	[Space]
+    [SerializeField]
+    [Space]
 	private Transform spawnPoint;
 
 	void Start() {

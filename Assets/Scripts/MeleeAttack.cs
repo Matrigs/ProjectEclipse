@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttack : MonoBehaviour 
+public class MeleeAttack : MonoBehaviour
 {
-	public LayerMask mask;
+    public enum PlayerCharacter
+    {
+        Ilio,
+        Luna,
+        Other
+    }
+
+    public LayerMask mask;
 	public Vector2 attackBoxSize;
 	public Vector2 attackBoxOffset;
 	public bool facingRight = true;
@@ -18,6 +25,7 @@ public class MeleeAttack : MonoBehaviour
 	public Controller2D col2D;
 
 	private ColliderState _state;
+    public PlayerCharacter character;
 	
 	void Update () 
 	{
@@ -36,7 +44,7 @@ public class MeleeAttack : MonoBehaviour
 			{
 				if(colliders[i].GetComponent<Hurtbox>())
 				{
-					colliders[i].GetComponent<Hurtbox>().TakeDamage(Damage);
+					colliders[i].GetComponent<Hurtbox>().TakeDamage(Damage, character);
 				}
 			}
 
