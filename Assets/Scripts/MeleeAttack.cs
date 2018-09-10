@@ -26,6 +26,7 @@ public class MeleeAttack : MonoBehaviour
 
 	private ColliderState _state;
     public PlayerCharacter character;
+    public GameObject shieldPlatform;
 
 	void Update () 
 	{
@@ -90,11 +91,23 @@ public class MeleeAttack : MonoBehaviour
 	}
 	public void startCheckingCollision() 
 	{
-		_state = ColliderState.Open; 
+		_state = ColliderState.Open;
+
+        if (character == PlayerCharacter.Ilio) IlioAction(true);
 	}
 
     public void stopCheckingCollision() 
 	{
-        _state = ColliderState.Closed; 
+        _state = ColliderState.Closed;
+
+        if (character == PlayerCharacter.Ilio) IlioAction(false);
+    }
+
+    public void IlioAction(bool status)
+    {
+        if(shieldPlatform != null)
+        {
+            shieldPlatform.SetActive(status);
+        }
     }
 }

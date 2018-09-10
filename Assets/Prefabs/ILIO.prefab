@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4589956058396756}
   - component: {fileID: 114769583604076132}
-  - component: {fileID: 212287795249409658}
+  - component: {fileID: 212715817224473402}
   m_Layer: 8
   m_Name: PlayerAttackBox (SHIELD)
   m_TagString: Player
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4656156387326660}
   - component: {fileID: 212990020243211512}
   - component: {fileID: 114174105301895270}
-  - component: {fileID: 95789290704964900}
+  - component: {fileID: 95119394433008746}
   m_Layer: 8
   m_Name: PlayerSprite
   m_TagString: Player
@@ -83,6 +83,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1658304968185374
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4463165397799008}
+  - component: {fileID: 61587497341188944}
+  m_Layer: 9
+  m_Name: ShieldPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!4 &4324381218494090
 Transform:
   m_ObjectHideFlags: 1
@@ -97,6 +113,19 @@ Transform:
   m_Father: {fileID: 4785358823670656}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4463165397799008
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658304968185374}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4656156387326660}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4589956058396756
 Transform:
   m_ObjectHideFlags: 1
@@ -104,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1367736119955154}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4324381218494090}
@@ -119,7 +148,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.13622534, y: 0.13622534, z: 0.13622534}
-  m_Children: []
+  m_Children:
+  - {fileID: 4463165397799008}
   m_Father: {fileID: 4785358823670656}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -130,7 +160,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047889007067384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 2.18, z: 0}
+  m_LocalPosition: {x: -2.85, y: 2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4324381218494090}
@@ -218,7 +248,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.73668283, y: 1.0146325}
   m_EdgeRadius: 0
---- !u!95 &95789290704964900
+--- !u!61 &61587497341188944
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658304968185374}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.17, y: 3.66}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.7, y: 4}
+  m_EdgeRadius: 0
+--- !u!95 &95119394433008746
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -316,6 +371,7 @@ MonoBehaviour:
   collidingColor: {r: 1, g: 0.9479667, b: 0, a: 1}
   col2D: {fileID: 114090550302567018}
   character: 0
+  shieldPlatform: {fileID: 1658304968185374}
 --- !u!114 &114783951052440928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -327,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318e5372514b0354cb2ee9cea46a4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 95789290704964900}
+  animator: {fileID: 95119394433008746}
   debug: 0
   maxJumpHeight: 2
   minJumpHeight: 1
@@ -344,7 +400,7 @@ MonoBehaviour:
   velocityXSmoothing: 0
   velocity: {x: 0, y: 0, z: 0}
   spawnPoint: {fileID: 0}
---- !u!212 &212287795249409658
+--- !u!212 &212715817224473402
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
