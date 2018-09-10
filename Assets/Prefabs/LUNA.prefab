@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4536060531174926}
   - component: {fileID: 212606432417051074}
   - component: {fileID: 114133780094527162}
-  - component: {fileID: 95276961174237966}
+  - component: {fileID: 95691320611165884}
   m_Layer: 8
   m_Name: PlayerSprite
   m_TagString: Player
@@ -217,7 +217,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5522766, y: 1.0840003}
   m_EdgeRadius: 0
---- !u!95 &95276961174237966
+--- !u!95 &95691320611165884
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -262,7 +262,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 4096
-  attackBoxSize: {x: 0.37, y: 0.68}
+  attackBoxSize: {x: 0.25, y: 0.68}
   attackBoxOffset: {x: -0.83, y: 0}
   facingRight: 0
   Damage: 20
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318e5372514b0354cb2ee9cea46a4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 95276961174237966}
+  animator: {fileID: 95691320611165884}
   debug: 0
   maxJumpHeight: 1.5
   minJumpHeight: 0.5

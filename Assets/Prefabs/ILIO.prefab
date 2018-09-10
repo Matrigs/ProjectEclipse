@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4589956058396756}
   - component: {fileID: 114769583604076132}
-  - component: {fileID: 212287795249409658}
+  - component: {fileID: 212628521073807868}
   m_Layer: 8
   m_Name: PlayerAttackBox (SHIELD)
   m_TagString: Player
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4656156387326660}
   - component: {fileID: 212990020243211512}
   - component: {fileID: 114174105301895270}
-  - component: {fileID: 95789290704964900}
+  - component: {fileID: 95447595814229390}
   m_Layer: 8
   m_Name: PlayerSprite
   m_TagString: Player
@@ -218,7 +218,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.73668283, y: 1.0146325}
   m_EdgeRadius: 0
---- !u!95 &95789290704964900
+--- !u!95 &95447595814229390
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318e5372514b0354cb2ee9cea46a4132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 95789290704964900}
+  animator: {fileID: 95447595814229390}
   debug: 0
   maxJumpHeight: 2
   minJumpHeight: 1
@@ -344,7 +344,7 @@ MonoBehaviour:
   velocityXSmoothing: 0
   velocity: {x: 0, y: 0, z: 0}
   spawnPoint: {fileID: 0}
---- !u!212 &212287795249409658
+--- !u!212 &212628521073807868
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

@@ -6,6 +6,9 @@ public class Shoot : MonoBehaviour {
 
 	public GameObject Bullet;
 	public float timeOfShots;
+
+	public EnemyController dirControl;
+
 	void Start () 
 	{
 		StartCoroutine(ShootRoutine());
@@ -15,7 +18,10 @@ public class Shoot : MonoBehaviour {
 		for(;;)
 		{
 			yield return new WaitForSeconds(timeOfShots);
-			Instantiate(Bullet,transform.position + new Vector3(0,0.2f,0),Quaternion.identity);
+			var obj = Instantiate (Bullet, transform.position + new Vector3 (0, 0.2f, 0), Quaternion.identity);
+
+			obj.GetComponent<Bullet> ().enemyControl = dirControl;
 		}
+
 	}
 }
