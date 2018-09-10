@@ -2,14 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttack : MonoBehaviour
-{
-    public enum PlayerCharacter
-    {
-        Ilio,
-        Luna,
-        Other
-    }
+public class MeleeAttack : MonoBehaviour { 
 
     public LayerMask mask;
 	public Vector2 attackBoxSize;
@@ -25,8 +18,8 @@ public class MeleeAttack : MonoBehaviour
 	public Controller2D col2D;
 
 	private ColliderState _state;
-    public PlayerCharacter character;
-    public GameObject shieldPlatform;
+    public PlayerComponent controller;
+
 
 	void Update () 
 	{
@@ -45,7 +38,7 @@ public class MeleeAttack : MonoBehaviour
 			{
 				if(colliders[i].GetComponent<Hurtbox>())
 				{
-					colliders[i].GetComponent<Hurtbox>().TakeDamage(Damage, character);
+					colliders[i].GetComponent<Hurtbox>().TakeDamage(Damage, controller.character);
 				}
 			}
 
@@ -93,21 +86,13 @@ public class MeleeAttack : MonoBehaviour
 	{
 		_state = ColliderState.Open;
 
-        if (character == PlayerCharacter.Ilio) IlioAction(true);
+        if (controller != null && controller.character == PlayerComponent.PlayerCharacter.Ilio) controller.actionButtonPressed = true;
 	}
 
     public void stopCheckingCollision() 
 	{
         _state = ColliderState.Closed;
 
-        if (character == PlayerCharacter.Ilio) IlioAction(false);
-    }
-
-    public void IlioAction(bool status)
-    {
-        if(shieldPlatform != null)
-        {
-            shieldPlatform.SetActive(status);
-        }
+        if (controller != null && controller.character == PlayerComponent.PlayerCharacter.Ilio) controller.actionButtonPressed = false;
     }
 }

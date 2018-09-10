@@ -6,9 +6,9 @@ using UnityEngine;
 public class ParryBox : Hurtbox {
     private bool _parried = false;
 
-    public override void TakeDamage(int Damage, MeleeAttack.PlayerCharacter character)
+    public override void TakeDamage(int Damage, PlayerComponent.PlayerCharacter character)
     {
-        if (!_parried && character == MeleeAttack.PlayerCharacter.Luna)
+        if (!_parried && character == PlayerComponent.PlayerCharacter.Luna)
         {
             GetComponent<Bullet>().velocity *= -1;
             _parried = true;

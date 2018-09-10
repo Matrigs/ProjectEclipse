@@ -4,7 +4,14 @@ using System;
 using UnityEngine.EventSystems;
 
 [RequireComponent (typeof (Controller2D))]
-public class PlayerComponent : MonoBehaviour {
+public class PlayerComponent : MonoBehaviour
+{
+    public enum PlayerCharacter
+    {
+        Ilio,
+        Luna,
+        Other
+    }
 
     public delegate void playerAction();
     public static event playerAction ActionButton;
@@ -50,8 +57,12 @@ public class PlayerComponent : MonoBehaviour {
     [SerializeField]
     [Space]
 	private Transform spawnPoint;
+    public PlayerCharacter character;
+    [Header("Ilio action")]
+    public bool actionButtonPressed = false;
+    public GameObject shieldPlatform;
 
-	void Start() {
+    void Start() {
 		controller = GetComponent<Controller2D> ();
 
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
@@ -81,14 +92,23 @@ public class PlayerComponent : MonoBehaviour {
 	}
 
 	public void OnJumpInputDown() 
-	{		
-		if (controller.collisionsInf.below) {
+	{
+        if (actionButtonPressed)
+        {
+            IlioAction(true);
+        }
+		else if (controller.collisionsInf.below) {
 			velocity.y = maxJumpVelocity;
 		}
 	}
 
-	public void OnJumpInputUp() {
-		if (velocity.y > minJumpVelocity) {
+	public void OnJumpInputUp()
+    {
+        if (actionButtonPressed)
+        {
+            IlioAction(false);
+        }
+        else if (velocity.y > minJumpVelocity) {
 			velocity.y = minJumpVelocity;
 		}
 	}
@@ -129,4 +149,12 @@ public class PlayerComponent : MonoBehaviour {
 		Debug.Log("STOP ATTACK");
 		animator.SetBool ("Action", false);
 	}
+
+    public void IlioAction(bool status)
+    {
+        if (shieldPlatform != null)
+        {
+            shieldPlatform.SetActive(status);
+        }
+    }
 }

@@ -15,7 +15,7 @@ public class Hurtbox : MonoBehaviour {
 		ChangeHPText();
 	}
 
-	public virtual void TakeDamage(int Damage, MeleeAttack.PlayerCharacter character)
+	public virtual void TakeDamage(int Damage, PlayerComponent.PlayerCharacter character)
 	{
 		if(hurtboxState == _state.Open)	
 		{

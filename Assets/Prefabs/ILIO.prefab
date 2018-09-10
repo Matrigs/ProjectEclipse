@@ -370,8 +370,7 @@ MonoBehaviour:
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.9479667, b: 0, a: 1}
   col2D: {fileID: 114090550302567018}
-  character: 0
-  shieldPlatform: {fileID: 1658304968185374}
+  controller: {fileID: 114783951052440928}
 --- !u!114 &114783951052440928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -400,6 +399,9 @@ MonoBehaviour:
   velocityXSmoothing: 0
   velocity: {x: 0, y: 0, z: 0}
   spawnPoint: {fileID: 0}
+  character: 0
+  actionButtonPressed: 0
+  shieldPlatform: {fileID: 1658304968185374}
 --- !u!212 &212715817224473402
 SpriteRenderer:
   m_ObjectHideFlags: 1
