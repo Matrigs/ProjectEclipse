@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1305443617362122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18, y: 2.18, z: 0}
+  m_LocalPosition: {x: -0.0000009536743, y: 2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4064593420000014}
@@ -270,7 +270,7 @@ MonoBehaviour:
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.9479667, b: 0, a: 1}
   col2D: {fileID: 114823282858181522}
-  character: 1
+  controller: {fileID: 114735424271779676}
 --- !u!114 &114735424271779676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,10 +284,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95691320611165884}
   debug: 0
-  maxJumpHeight: 1.5
-  minJumpHeight: 0.5
+  maxJumpHeight: 2
+  minJumpHeight: 1
   timeToJumpApex: 0.45
-  fallMultipler: 1.5
+  fallMultipler: 1
   accelerationTimeAirborne: 0.1
   accelerationTimeGrounded: 0
   moveSpeed: 5
@@ -299,6 +299,9 @@ MonoBehaviour:
   velocityXSmoothing: 0
   velocity: {x: 0, y: 0, z: 0}
   spawnPoint: {fileID: 0}
+  character: 0
+  actionButtonPressed: 0
+  shieldPlatform: {fileID: 0}
 --- !u!114 &114823282858181522
 MonoBehaviour:
   m_ObjectHideFlags: 1

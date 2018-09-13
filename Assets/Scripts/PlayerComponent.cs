@@ -152,9 +152,8 @@ public class PlayerComponent : MonoBehaviour
 
     public void IlioAction(bool status)
     {
-        if (shieldPlatform != null)
-        {
-            shieldPlatform.SetActive(status);
-        }
+		if (shieldPlatform != null) {
+			shieldPlatform.SetActive (status);
+		}
     }
 }
