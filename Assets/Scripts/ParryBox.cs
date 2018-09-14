@@ -9,7 +9,7 @@ public class ParryBox : Hurtbox {
     public override void TakeDamage(int Damage, PlayerComponent.PlayerCharacter character)
     {
         if (!_parried && character == PlayerComponent.PlayerCharacter.Luna)
-        {
+		{
             GetComponent<Bullet>().velocity *= -1;
             _parried = true;
         }
