@@ -1628,11 +1628,6 @@ Prefab:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1487718935}
-    - target: {fileID: 114735424271779676, guid: 7bcb05f4ca1854c42b9f630e717e8226,
-        type: 2}
-      propertyPath: timeToJumpApex
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bcb05f4ca1854c42b9f630e717e8226, type: 2}
   m_IsPrefabAsset: 0
@@ -4173,7 +4168,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114360653237848222, guid: 06cc7c70c5ac91144a3f0aba3b420425,
+    - target: {fileID: 114339757164565400, guid: 06cc7c70c5ac91144a3f0aba3b420425,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4183,7 +4178,7 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 12244615}
-    - target: {fileID: 114339757164565400, guid: 06cc7c70c5ac91144a3f0aba3b420425,
+    - target: {fileID: 114360653237848222, guid: 06cc7c70c5ac91144a3f0aba3b420425,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

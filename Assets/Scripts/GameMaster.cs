@@ -10,11 +10,15 @@ public class GameMaster : MonoBehaviour {
 	public Transform playerPrefabLuna;
 	public Transform spawnPoint;
 
+	//public GameObject checkPoint;
+
 	void Start () {
 		if (gm == null) {
 			gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster>();
 			spawnPosition.Set (spawnPoint.position.x, spawnPoint.position.y, 0);
 		}
+
+		//checkPoint.SetActive (false);
 	}
 
 	//public int spawnDelay;
