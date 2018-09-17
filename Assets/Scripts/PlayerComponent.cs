@@ -165,7 +165,6 @@ public class PlayerComponent : MonoBehaviour
 
     public void IlioAction(bool status)
     {
-		Debug.Log ("Call ilioaction");
 		if (shieldPlatform != null) {
 			shieldPlatform.SetActive (status);
 		}
