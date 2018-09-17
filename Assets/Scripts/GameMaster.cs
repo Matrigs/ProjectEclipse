@@ -5,20 +5,18 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour {
 
 	public static GameMaster gm;
-	Vector3 spawnPosition;
+	public Vector3 spawnPosition;
 	public Transform playerPrefabIlio;
 	public Transform playerPrefabLuna;
 	public Transform spawnPoint;
 
-	//public GameObject checkPoint;
+	public List <Transform> checkpoints = new List<Transform> ();
 
 	void Start () {
 		if (gm == null) {
 			gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster>();
 			spawnPosition.Set (spawnPoint.position.x, spawnPoint.position.y, 0);
 		}
-
-		//checkPoint.SetActive (false);
 	}
 
 	//public int spawnDelay;
