@@ -146,6 +146,7 @@ public class PlayerComponent : MonoBehaviour
 		}
     }
 	public void OnActionUp(){
+		animator.SetBool ("Action", false);
 		if (actionButtonPressed)
 		{
 			IlioAction(false);
