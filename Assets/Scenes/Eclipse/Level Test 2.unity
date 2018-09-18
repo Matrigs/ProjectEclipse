@@ -3446,9 +3446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e87b0b3df9d2e4fa01110066981005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPosition: {x: 0, y: 0, z: 0}
   playerPrefabIlio: {fileID: 423727738}
   playerPrefabLuna: {fileID: 148120793}
   spawnPoint: {fileID: 64269318}
+  checkpoints: []
 --- !u!4 &1487718935
 Transform:
   m_ObjectHideFlags: 0
@@ -4013,6 +4015,10 @@ Prefab:
       propertyPath: dirControl
       value: 
       objectReference: {fileID: 1299942158}
+    - target: {fileID: 1124737812595068, guid: 8adaddfbbbf3b6140bd95049fc445024, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114662134530208836, guid: 8adaddfbbbf3b6140bd95049fc445024, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 8adaddfbbbf3b6140bd95049fc445024, type: 2}
