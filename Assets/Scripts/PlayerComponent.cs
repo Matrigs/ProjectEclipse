@@ -139,7 +139,20 @@ public class PlayerComponent : MonoBehaviour
         ActionButton();
 		StartCoroutine(DoMeleeAttack(activeAttackTime));
 		animator.SetBool ("Action", true);
+
+		if (character == PlayerCharacter.Ilio) {
+			IlioAction (true);
+			actionButtonPressed = true;	
+		}
     }
+	public void OnActionUp(){
+		animator.SetBool ("Action", false);
+		if (actionButtonPressed)
+		{
+			IlioAction(false);
+			actionButtonPressed = false;	
+		}		
+	}
 	IEnumerator DoMeleeAttack(float activeTime)
 	{
 		meleeAtt.startCheckingCollision();

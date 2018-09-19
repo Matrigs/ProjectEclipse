@@ -286,7 +286,7 @@ MonoBehaviour:
   debug: 0
   maxJumpHeight: 2
   minJumpHeight: 1
-  timeToJumpApex: 0.45
+  timeToJumpApex: 0.4
   fallMultipler: 1
   accelerationTimeAirborne: 0.1
   accelerationTimeGrounded: 0
@@ -299,7 +299,7 @@ MonoBehaviour:
   velocityXSmoothing: 0
   velocity: {x: 0, y: 0, z: 0}
   spawnPoint: {fileID: 0}
-  character: 0
+  character: 1
   actionButtonPressed: 0
   shieldPlatform: {fileID: 0}
 --- !u!114 &114823282858181522

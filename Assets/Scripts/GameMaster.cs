@@ -5,10 +5,12 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour {
 
 	public static GameMaster gm;
-	Vector3 spawnPosition;
+	public Vector3 spawnPosition;
 	public Transform playerPrefabIlio;
 	public Transform playerPrefabLuna;
 	public Transform spawnPoint;
+
+	public List <Transform> checkpoints = new List<Transform> ();
 
 	void Start () {
 		if (gm == null) {

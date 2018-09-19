@@ -50,6 +50,10 @@ public class InputController : MonoBehaviour
 			{
 				playerComp.OnActionDown();
 			}
+			if(device.Action2.WasReleased)
+			{
+				playerComp.OnActionUp();
+			}
 		}
 
 		Vector2 directionalInput;
@@ -78,6 +82,10 @@ public class InputController : MonoBehaviour
         {
             playerComp.OnActionDown();
         }
+		if(Input.GetKeyUp(pKeys.actionKey))
+		{
+			playerComp.OnActionUp();
+		}
     }
 }
 [System.Serializable]
