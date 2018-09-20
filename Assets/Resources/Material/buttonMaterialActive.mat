@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: buttonMaterialActive
   m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
@@ -72,5 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.4457246, g: 0.8396226, b: 0.09109115, a: 1}
+    - _Color: {r: 0.026432898, g: 0.11559588, b: 0.509434, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
