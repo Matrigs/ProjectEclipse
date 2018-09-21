@@ -15,8 +15,19 @@ public class Controller2D : RaycastController {
 		base.OnEnable();
 	}
 
-    public void Move(Vector3 deltaMove,bool standingOnPlatform = false)
+	public void Move(Vector3 deltaMove, bool standingOnPlatform = false, Animator animator = null)
     {	
+		if (animator != null) {
+			/*if (Mathf.Abs(deltaMove.y) > 0.1) {
+				animator.SetTrigger ("MoveEnd");
+			}
+			else*/ if (Mathf.Abs (deltaMove.x) > 0.01) {
+				animator.SetTrigger ("MoveStart");
+			} else {
+				animator.SetTrigger ("MoveEnd");
+			}
+		}
+
 		UpdateRaycastOrigins();
 		collisionsInf.ResetColl();
 

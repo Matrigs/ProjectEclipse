@@ -78,9 +78,9 @@ public class PlayerComponent : MonoBehaviour
 	void Update() {
 		RecalculatePhysics(debug);
 		CalculateVelocity ();
-		animator.SetFloat ("Speed", Mathf.Abs(velocityXSmoothing));
+		//animator.SetFloat ("Speed", Mathf.Abs(velocityXSmoothing));
 
-		controller.Move (velocity * Time.deltaTime);
+		controller.Move (velocity * Time.deltaTime, false, animator);
 		if (controller.collisionsInf.above || controller.collisionsInf.below) {
 			velocity.y = 0;
 		}
@@ -89,6 +89,7 @@ public class PlayerComponent : MonoBehaviour
 
 	public void SetDirectionalInput (Vector2 input) {
 		directionalInput = input;
+
 	}
 
 	public void OnJumpInputDown() 
@@ -157,7 +158,7 @@ public class PlayerComponent : MonoBehaviour
 	{
 		meleeAtt.startCheckingCollision();
 		Debug.Log("ATTACK");
-		yield return new WaitForSeconds(activeTime);
+		yield return new WaitForSeconds (activeTime);
 		meleeAtt.stopCheckingCollision();
 		Debug.Log("STOP ATTACK");
 		animator.SetBool ("Action", false);

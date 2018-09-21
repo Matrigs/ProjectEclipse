@@ -9,6 +9,7 @@ TagManager:
   - Dialog
   - Push
   - Checkpoint
+  - Spawnpoint
   layers:
   - Default
   - TransparentFX

@@ -309,6 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emblem: {fileID: 365180364}
+  spawnPoint: {fileID: 0}
 --- !u!61 &172889958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1702,6 +1703,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4548517220070642, guid: 9878a6415699ca74a84e360a18715f67,
     type: 2}
   m_PrefabInternal: {fileID: 1487611323}
+--- !u!1 &1346034980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1658495163195388, guid: 1ee051322ed473e4eacd7eeb68d981ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 501629504}
 --- !u!1001 &1380064924
 Prefab:
   m_ObjectHideFlags: 0
@@ -2322,15 +2328,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 29
       objectReference: {fileID: 0}
-    - target: {fileID: 212047765678330268, guid: 131cbe9848196b24d867a74e1ec5edef,
+    - target: {fileID: 114976502507399298, guid: 131cbe9848196b24d867a74e1ec5edef,
         type: 2}
-      propertyPath: m_Color.b
-      value: 0.06844139
-      objectReference: {fileID: 0}
-    - target: {fileID: 1013580952952416, guid: 131cbe9848196b24d867a74e1ec5edef, type: 2}
-      propertyPath: m_TagString
-      value: Checkpoint
-      objectReference: {fileID: 0}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1346034980}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 131cbe9848196b24d867a74e1ec5edef, type: 2}
   m_IsPrefabAsset: 0
