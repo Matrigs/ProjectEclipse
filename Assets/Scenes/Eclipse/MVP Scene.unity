@@ -2322,6 +2322,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 29
       objectReference: {fileID: 0}
+    - target: {fileID: 212047765678330268, guid: 131cbe9848196b24d867a74e1ec5edef,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.06844139
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013580952952416, guid: 131cbe9848196b24d867a74e1ec5edef, type: 2}
+      propertyPath: m_TagString
+      value: Checkpoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 131cbe9848196b24d867a74e1ec5edef, type: 2}
   m_IsPrefabAsset: 0

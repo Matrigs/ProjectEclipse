@@ -8,6 +8,7 @@ TagManager:
   - GM
   - Dialog
   - Push
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
