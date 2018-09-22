@@ -10,6 +10,8 @@ TagManager:
   - Push
   - Checkpoint
   - Spawnpoint
+  - Wall
+  - Door
   layers:
   - Default
   - TransparentFX

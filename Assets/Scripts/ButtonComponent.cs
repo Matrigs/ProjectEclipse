@@ -6,6 +6,7 @@ using UnityEngine;
 public class ButtonComponent : InteractiveComponent
 {
     public ReactiveComponent attachedReactionObject;
+	public ReactiveComponent attachedReactionObject2;
     public buttonState currentState = buttonState.active;
 
     [SerializeField]
@@ -38,6 +39,7 @@ public class ButtonComponent : InteractiveComponent
             Debug.Log("DoorOpen");
             ChangeState();
             attachedReactionObject.Reaction();
+			attachedReactionObject2.Reaction();
         }
     }
     void ChangeState()
@@ -80,6 +82,7 @@ public class ButtonComponent : InteractiveComponent
         Gizmos.DrawSphere(transform.position, 0.1f);
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(attachedReactionObject.transform.position, 0.1f);
+		Gizmos.DrawSphere(attachedReactionObject2.transform.position, 0.1f);
         //Gizmos.color = Color.white;
         //Gizmos.DrawLine(transform.position, attachedReactionObject.transform.position);
     }
