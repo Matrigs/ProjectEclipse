@@ -57,10 +57,13 @@ public class PlayerComponent : MonoBehaviour
     [SerializeField]
     [Space]
 	private Transform spawnPoint;
+
+	[Header("Character")]
     public PlayerCharacter character;
-    [Header("Ilio action")]
+
+	[Header("Ilio action")]
+	public GameObject shieldPlatform;
     private bool IlioActionButtonPressed = false;
-    public GameObject shieldPlatform;
 
     void Start() {
 		controller = GetComponent<Controller2D> ();
