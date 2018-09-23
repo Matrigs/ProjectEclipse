@@ -40,6 +40,7 @@ public class Life : MonoBehaviour {
 			//Se não, dá dano
 			else{
 				Debug.Log ("YOU ARE DEAD");
+				Destroy (info.gameObject);
 				gameObject.SetActive (false);
 				//Destroy (this);
 				GameMaster.gm.RespawnPlayer ();
