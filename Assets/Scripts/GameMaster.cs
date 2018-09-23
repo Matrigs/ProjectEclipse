@@ -5,26 +5,28 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour {
 
 	public static GameMaster gm;
-	public Vector3 spawnPosition;
 	public Transform playerPrefabIlio;
 	public Transform playerPrefabLuna;
 	public Transform spawnPoint;
 
 	public List <Transform> checkpoints = new List<Transform> ();
 
+	public Vector3 spawnPosition {get {return checkpoints[checkpoints.Count - 1].position;}}
+
 	void Start () {
 		if (gm == null) {
 			gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster>();
-			spawnPosition.Set (spawnPoint.position.x, spawnPoint.position.y, 0);
+			checkpoints.Add(spawnPoint);
 		}
 	}
 
 	//public int spawnDelay;
 
 	public void RespawnPlayer () {
-		playerPrefabIlio.transform.position = spawnPosition;
-		playerPrefabLuna.transform.position = spawnPosition;
+		playerPrefabIlio.transform.position = spawnPosition + Vector3.left;
+		playerPrefabLuna.transform.position = spawnPosition + Vector3.right;
 
+		/*
 		for (int i = 0; i < playerPrefabIlio.transform.childCount; i++) {
 			playerPrefabIlio.transform.GetChild (i).transform.position = spawnPosition;
 		}
@@ -32,9 +34,10 @@ public class GameMaster : MonoBehaviour {
 		for (int i = 0; i < playerPrefabLuna.transform.childCount; i++) {
 			playerPrefabLuna.transform.GetChild (i).transform.position = spawnPosition;
 		}
+		*/
 
-		Debug.Log (playerPrefabIlio.transform.position + " PlayerPrefabIio");
-		Debug.Log (playerPrefabLuna.transform.position + " PlayerPrefabIio");
+		Debug.Log (playerPrefabIlio.transform.position + " PlayerPrefabIlio");
+		Debug.Log (playerPrefabLuna.transform.position + " PlayerPrefabLuna");
 		Debug.Log (spawnPosition + " SpawnPosition");
 		Debug.Log ("TO DO: Add Spawn Particles");
 	}
