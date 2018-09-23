@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1305443617362122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000009536743, y: 2.18, z: 0}
+  m_LocalPosition: {x: -30.85, y: 2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4064593420000014}
@@ -300,7 +300,6 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   spawnPoint: {fileID: 0}
   character: 1
-  actionButtonPressed: 0
   shieldPlatform: {fileID: 0}
 --- !u!114 &114823282858181522
 MonoBehaviour:
@@ -316,7 +315,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 512
-  maxSlopeAngle: 80
+  maxSlopeAngle: 50
   facingRight: 0
 --- !u!114 &114853333560681180
 MonoBehaviour:

@@ -1702,11 +1702,6 @@ Prefab:
       propertyPath: shieldPlatform
       value: 
       objectReference: {fileID: 281337345}
-    - target: {fileID: 114823282858181522, guid: 7bcb05f4ca1854c42b9f630e717e8226,
-        type: 2}
-      propertyPath: maxSlopeAngle
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bcb05f4ca1854c42b9f630e717e8226, type: 2}
   m_IsPrefabAsset: 0
