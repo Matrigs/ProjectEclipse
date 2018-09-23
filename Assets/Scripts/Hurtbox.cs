@@ -30,6 +30,19 @@ public class Hurtbox : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 	}
+	void OnCollisionEnter2D (Collision2D info) {
+		if (info.collider.tag == "Danger") {
+			//Checa se não foi parryado
+			ParryBox p = info.collider.GetComponent<ParryBox>();
+			if(p == null || !p.parried) return;
+
+			//Se foi, dá dano
+			else{
+				Destroy(this.gameObject);
+			}
+		}
+			
+	}
 
 
 	protected IEnumerator Recover(float time)

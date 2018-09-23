@@ -4,14 +4,14 @@ using UnityEngine;
 
 [RequireComponent(typeof(Bullet))]
 public class ParryBox : Hurtbox {
-    private bool _parried = false;
+    [HideInInspector] public bool parried = false;
 
     public override void TakeDamage(int Damage, PlayerComponent.PlayerCharacter character)
     {
-        if (!_parried && character == PlayerComponent.PlayerCharacter.Luna)
+        if (!parried && character == PlayerComponent.PlayerCharacter.Luna)
 		{
             GetComponent<Bullet>().velocity *= -1;
-            _parried = true;
+            parried = true;
         }
         else
         {

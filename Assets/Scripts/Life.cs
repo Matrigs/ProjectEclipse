@@ -33,11 +33,18 @@ public class Life : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D info) {
 		if (info.collider.tag == "Danger") {
-			Debug.Log ("YOU ARE DEAD");
-			gameObject.SetActive (false);
-			//Destroy (this);
-			GameMaster.gm.RespawnPlayer ();
-			gameObject.SetActive (true);
+			//Checa se foi parryado
+			ParryBox p = info.collider.GetComponent<ParryBox>();
+			if(p != null && p.parried) return;
+
+			//Se não, dá dano
+			else{
+				Debug.Log ("YOU ARE DEAD");
+				gameObject.SetActive (false);
+				//Destroy (this);
+				GameMaster.gm.RespawnPlayer ();
+				gameObject.SetActive (true);
+			}
 		}
 			
 	}
