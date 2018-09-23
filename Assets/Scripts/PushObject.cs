@@ -7,7 +7,7 @@ public class PushObject : MonoBehaviour {
 	public float pushSpeed = 1f;
 
 	void OnCollisionStay2D(Collision2D col){
-		if (activated && col.gameObject.layer == LayerMask.NameToLayer ("Hurt")) {
+		if (activated && (col.gameObject.layer == LayerMask.NameToLayer ("Hurt") || col.gameObject.layer == LayerMask.NameToLayer ("MovableObstacle"))) {
 			Vector2 dir = col.GetContact (0).point - (Vector2)transform.position; 
 			col.transform.Translate (dir * pushSpeed * Time.deltaTime);
 		}
