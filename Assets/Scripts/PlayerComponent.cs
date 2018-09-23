@@ -171,7 +171,7 @@ public class PlayerComponent : MonoBehaviour
 
     public void IlioAction(bool status)
     {
-		if (shieldPlatform != null) {
+		if (character == PlayerCharacter.Ilio) {
 			shieldPlatform.SetActive (status);
 			animator.SetBool ("ShieldPlatform", status);
 
