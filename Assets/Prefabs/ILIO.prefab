@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 114090550302567018}
   - component: {fileID: 50002888720856482}
   - component: {fileID: 114271621624625912}
+  - component: {fileID: 114333398419641150}
   m_Layer: 8
   m_Name: PlayerHitBox
   m_TagString: Player
@@ -332,6 +333,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbf4c977acf2aa40b0ca09390ee02d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114333398419641150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514088780714262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c98de6fb6015b44b04bd58152debaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activated: 0
+  pushSpeed: 1
 --- !u!114 &114490258231722636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -401,7 +415,6 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   spawnPoint: {fileID: 0}
   character: 0
-  actionButtonPressed: 0
   shieldPlatform: {fileID: 1939743782304720}
 --- !u!212 &212043084771548304
 SpriteRenderer:
