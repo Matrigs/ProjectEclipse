@@ -63,10 +63,12 @@ public class PlayerComponent : MonoBehaviour
 
 	[Header("Ilio action")]
 	public GameObject shieldPlatform;
+	private PushObject pushObjectComponent;
     private bool IlioActionButtonPressed = false;
 
     void Start() {
-		controller = GetComponent<Controller2D> ();
+		controller = GetComponent<Controller2D>();
+		pushObjectComponent = GetComponent<PushObject>();
 
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -145,6 +147,7 @@ public class PlayerComponent : MonoBehaviour
 
 		if (character == PlayerCharacter.Ilio) {
 			IlioActionButtonPressed = true;	
+			ChangePushObjectStatus(true);
 		}
     }
 	public void OnActionUp(){
@@ -153,6 +156,7 @@ public class PlayerComponent : MonoBehaviour
 		{
 			IlioActionButtonPressed = false;
 			IlioAction(false);
+			ChangePushObjectStatus(false);
 		}		
 	}
 	IEnumerator DoMeleeAttack(float activeTime)
@@ -170,6 +174,18 @@ public class PlayerComponent : MonoBehaviour
 		if (shieldPlatform != null) {
 			shieldPlatform.SetActive (status);
 			animator.SetBool ("ShieldPlatform", status);
+
+			if (IlioActionButtonPressed)
+				ChangePushObjectStatus (!status);
+			else
+				ChangePushObjectStatus (false);
 		}
     }
+
+	public void ChangePushObjectStatus(bool status){
+		if (pushObjectComponent == null)
+			return;
+
+		pushObjectComponent.activated = status;
+	}
 }
