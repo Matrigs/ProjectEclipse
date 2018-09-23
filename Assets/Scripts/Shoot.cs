@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(FieldOfView))]
 public class Shoot : MonoBehaviour {
 
 	public GameObject Bullet;
@@ -15,12 +16,16 @@ public class Shoot : MonoBehaviour {
 	}
 	private IEnumerator ShootRoutine()
 	{
+		FieldOfView fov = GetComponent<FieldOfView>();
+
 		for(;;)
 		{
 			yield return new WaitForSeconds(timeOfShots);
-			var obj = Instantiate (Bullet, transform.position + new Vector3 (0, 0.2f, 0), Quaternion.identity);
+			if (fov.visibleTargets.Count > 0) {
+				var obj = Instantiate (Bullet, transform.position + new Vector3 (0, 0.2f, 0), Quaternion.identity);
 
-			obj.GetComponent<Bullet> ().enemyControl = dirControl;
+				obj.GetComponent<Bullet> ().enemyControl = dirControl;
+			}
 		}
 
 	}

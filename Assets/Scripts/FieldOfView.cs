@@ -6,11 +6,10 @@ public class FieldOfView : MonoBehaviour {
 
     [Range(0,20)]
     public float viewRadius;
-    [Range(0, 360)]
+    [Range(0, 180)]
     public float viewAngle;
     [Tooltip("Delay from target entering the FOV ")]
     public float viewDelay;
-    public float maxInViewTime;
     [Space]
     public LayerMask targetMask;
     public LayerMask obstacleMask;
@@ -24,16 +23,27 @@ public class FieldOfView : MonoBehaviour {
     public float edgeDstThreshold;
 
     public MeshFilter viewMeshFilter;
-    public TextMesh timeViewer;
     private Mesh viewMesh;
-    private float inViewTime = 0;
+
+
+	private Vector3 visionDir;
+
+	private void OnValidate(){
+		RecalculateVisionDir();
+	}
+
+	private void RecalculateVisionDir(){
+		visionDir = GetComponent<SpriteRenderer>().flipX ? Vector3.left : Vector3.right;
+	}
+
     private void OnEnable()
     {
         viewMesh = new Mesh();
         viewMesh.name ="View Mesh";
-        viewMeshFilter.mesh = viewMesh;
+		if(viewMeshFilter != null) viewMeshFilter.mesh = viewMesh;
 
-        StartCoroutine("FindTargetsWithDelay", viewDelay);
+		StartCoroutine("FindTargetsWithDelay", viewDelay);
+		RecalculateVisionDir();
     }
 
     IEnumerator FindTargetsWithDelay(float delay)
@@ -54,7 +64,7 @@ public class FieldOfView : MonoBehaviour {
         {
             Transform target = targetsInViewRadious[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
-            if(Vector3.Angle(transform.up, dirToTarget) < viewAngle/2)
+            if(Vector3.Angle(visionDir, dirToTarget) < viewAngle/2)
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
                 if(!Physics2D.Raycast(transform.position,dirToTarget,dstToTarget,obstacleMask))
@@ -66,35 +76,21 @@ public class FieldOfView : MonoBehaviour {
     }
     private void Update()
     {
+		LineRenderer line = GetComponent<LineRenderer>();
+		RecalculateVisionDir();
+
         DrawFOV();
         if(visibleTargets.Count > 0)
         {
-            inViewTime += Time.deltaTime;
-            GetComponent<LineRenderer>().enabled = true;
-            GetComponent<LineRenderer>().SetPosition(0,this.transform.position);
-            GetComponent<LineRenderer>().SetPosition(1,visibleTargets[0].position);
+			if (line != null) {
+				line.enabled = true;
+				line.SetPosition (0, this.transform.position);
+				line.SetPosition (1, visibleTargets [0].position);
+			}
         }
         else
         {
-            inViewTime = 0;
-            GetComponent<LineRenderer>().enabled = false;
-        }
-        if(inViewTime < maxInViewTime - 1f)
-            timeViewer.text = inViewTime.ToString("0.00");
-        else
-        {
-            timeViewer.text = "DANGER";
-        }
-        if(inViewTime > maxInViewTime)
-        {
-            foreach(Transform visObj in visibleTargets)
-            {
-                if(visObj.GetComponent<PlayerComponent>())
-                {
-                    visObj.gameObject.SetActive(false);
-                }
-
-            }
+			if(line != null) line.enabled = false;
         }
     }
     void DrawFOV()
@@ -205,7 +201,7 @@ public class FieldOfView : MonoBehaviour {
         {
             angleInDegrees -= transform.eulerAngles.z;
         }
-        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad),0);
+		return Vector3.Reflect(visionDir, new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad),0));
     }
 
     public struct ViewCastInfo
@@ -235,4 +231,13 @@ public class FieldOfView : MonoBehaviour {
             pointB = _pointB;
         }
     }
+
+
+	public void OnDrawGizmos(){
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere (transform.position, viewRadius);
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawLine(transform.position, transform.position + DirFromAngle(-viewAngle/2, false) * viewRadius);
+		Gizmos.DrawLine(transform.position, transform.position + DirFromAngle(viewAngle/2, false) * viewRadius);
+	}
 }
