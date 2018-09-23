@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114186222203181258}
   - component: {fileID: 114662134530208836}
   - component: {fileID: 50451316098739842}
+  - component: {fileID: 114628812023400758}
   m_Layer: 12
   m_Name: Dummy
   m_TagString: Untagged
@@ -181,6 +182,31 @@ MonoBehaviour:
   Bullet: {fileID: 1807858347303534, guid: 60f57dd0bc5c0484aa0af1a1c402ac2a, type: 2}
   timeOfShots: 3
   dirControl: {fileID: 114662134530208836}
+--- !u!114 &114628812023400758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1124737812595068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8e27ad68e0aff4bbe05355d9e0600e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 3
+  viewAngle: 22
+  viewDelay: 0
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 256
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 512
+  visibleTargets: []
+  meshResolution: 0
+  edgeResolveIterations: 0
+  edgeDstThreshold: 0
+  viewMeshFilter: {fileID: 0}
 --- !u!114 &114662134530208836
 MonoBehaviour:
   m_ObjectHideFlags: 1
