@@ -76,7 +76,7 @@ public class PlayerComponent : MonoBehaviour
 	}
 	void OnEnable()
 	{		
-		transform.parent.position = spawnPoint.position;
+		//transform.parent.position = spawnPoint.position;
 		transform.localPosition = Vector3.zero;
 	}
 

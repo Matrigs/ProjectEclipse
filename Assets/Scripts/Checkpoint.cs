@@ -10,7 +10,6 @@ public class Checkpoint : MonoBehaviour {
 	//public GameMaster gamespawn;
 	List <Collider2D> players = new List<Collider2D>();
 	public GameObject emblem;
-	public GameObject spawnPoint;
 
 	// Use this for initialization
 	void Start () {
@@ -33,11 +32,14 @@ public class Checkpoint : MonoBehaviour {
 	}
 
 	void Update () { 
-		if (players.Count == 2) {
+		if (players.Count == 2 && !IsThisTheLastCheckpoint()) {
 			Debug.Log ("Checkpoint Reached!");
 			emblem.SetActive (true);
-			spawnPoint.transform.position = this.transform.position;
-			//gamespawn.spawnPosition.Set(emblem.transform.position.x, emblem.transform.position.y, 0);
+			GameMaster.gm.checkpoints.Add(transform);
 		}
+	}
+
+	bool IsThisTheLastCheckpoint(){
+		return GameMaster.gm.checkpoints[GameMaster.gm.checkpoints.Count - 1] == transform;
 	}
 }

@@ -40,10 +40,12 @@ public class Life : MonoBehaviour {
 			//Se não, dá dano
 			else{
 				Debug.Log ("YOU ARE DEAD");
-				gameObject.SetActive (false);
+				GameMaster.gm.playerPrefabIlio.gameObject.SetActive (false);
+				GameMaster.gm.playerPrefabLuna.gameObject.SetActive (false);
 				//Destroy (this);
 				GameMaster.gm.RespawnPlayer ();
-				gameObject.SetActive (true);
+				GameMaster.gm.playerPrefabIlio.gameObject.SetActive (true);
+				GameMaster.gm.playerPrefabLuna.gameObject.SetActive (true);
 			}
 		}
 			
