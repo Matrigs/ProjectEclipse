@@ -234,8 +234,6 @@ public class FieldOfView : MonoBehaviour {
 
 
 	public void OnDrawGizmos(){
-		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere (transform.position, viewRadius);
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawLine(transform.position, transform.position + DirFromAngle(-viewAngle/2, false) * viewRadius);
 		Gizmos.DrawLine(transform.position, transform.position + DirFromAngle(viewAngle/2, false) * viewRadius);
