@@ -85,14 +85,10 @@ public class MeleeAttack : MonoBehaviour {
 	public void startCheckingCollision() 
 	{
 		_state = ColliderState.Open;
-
-        if (controller != null && controller.character == PlayerComponent.PlayerCharacter.Ilio) controller.actionButtonPressed = true;
 	}
 
     public void stopCheckingCollision() 
 	{
         _state = ColliderState.Closed;
-
-        if (controller != null && controller.character == PlayerComponent.PlayerCharacter.Ilio) controller.actionButtonPressed = false;
     }
 }

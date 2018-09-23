@@ -57,10 +57,13 @@ public class PlayerComponent : MonoBehaviour
     [SerializeField]
     [Space]
 	private Transform spawnPoint;
+
+	[Header("Character")]
     public PlayerCharacter character;
-    [Header("Ilio action")]
-    public bool actionButtonPressed = false;
-    public GameObject shieldPlatform;
+
+	[Header("Ilio action")]
+	public GameObject shieldPlatform;
+    private bool IlioActionButtonPressed = false;
 
     void Start() {
 		controller = GetComponent<Controller2D> ();
@@ -84,7 +87,6 @@ public class PlayerComponent : MonoBehaviour
 		if (controller.collisionsInf.above || controller.collisionsInf.below) {
 			velocity.y = 0;
 		}
-
 	}
 
 	public void SetDirectionalInput (Vector2 input) {
@@ -94,7 +96,7 @@ public class PlayerComponent : MonoBehaviour
 
 	public void OnJumpInputDown() 
 	{
-        if (actionButtonPressed)
+        if (IlioActionButtonPressed)
         {
             IlioAction(true);
         }
@@ -105,13 +107,13 @@ public class PlayerComponent : MonoBehaviour
 
 	public void OnJumpInputUp()
     {
-        if (actionButtonPressed)
+        if (IlioActionButtonPressed)
         {
-            IlioAction(false);
         }
         else if (velocity.y > minJumpVelocity) {
 			velocity.y = minJumpVelocity;
 		}
+		IlioAction(false);
 	}
 
 	void CalculateVelocity() {
@@ -142,16 +144,15 @@ public class PlayerComponent : MonoBehaviour
 		animator.SetBool ("Action", true);
 
 		if (character == PlayerCharacter.Ilio) {
-			IlioAction (true);
-			actionButtonPressed = true;	
+			IlioActionButtonPressed = true;	
 		}
     }
 	public void OnActionUp(){
 		animator.SetBool ("Action", false);
-		if (actionButtonPressed)
+		if (IlioActionButtonPressed)
 		{
+			IlioActionButtonPressed = false;
 			IlioAction(false);
-			actionButtonPressed = false;	
 		}		
 	}
 	IEnumerator DoMeleeAttack(float activeTime)
@@ -161,13 +162,14 @@ public class PlayerComponent : MonoBehaviour
 		yield return new WaitForSeconds (activeTime);
 		meleeAtt.stopCheckingCollision();
 		Debug.Log("STOP ATTACK");
-		animator.SetBool ("Action", false);
+		if(character != PlayerCharacter.Ilio) animator.SetBool ("Action", false);
 	}
 
     public void IlioAction(bool status)
     {
 		if (shieldPlatform != null) {
 			shieldPlatform.SetActive (status);
+			animator.SetBool ("ShieldPlatform", status);
 		}
     }
 }
