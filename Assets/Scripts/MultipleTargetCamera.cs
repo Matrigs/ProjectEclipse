@@ -14,10 +14,10 @@ public class MultipleTargetCamera : MonoBehaviour {
 	public float maxZoom = 10f;
 	public float zoomLimiter = 50f;
 
-	public float limitYMin;
-	public float limitYMax;
-	public float limitXMin;
-	public float limitXMax;
+	//public float limitYMin;
+	//public float limitYMax;
+	//public float limitXMin;
+	//public float limitXMax;
 
 	private Camera cam;
 
