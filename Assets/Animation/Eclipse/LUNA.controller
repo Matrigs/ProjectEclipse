@@ -77,6 +77,9 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
+    m_ConditionEvent: MoveStart
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
     m_ConditionEvent: Action
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -127,6 +130,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: MoveEnd
+    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Action
     m_EventTreshold: 0
@@ -175,6 +181,9 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: MoveEnd
+    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Action
     m_EventTreshold: 0

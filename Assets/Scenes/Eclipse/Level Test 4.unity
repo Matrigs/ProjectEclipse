@@ -1608,11 +1608,6 @@ Prefab:
       propertyPath: shieldPlatform
       value: 
       objectReference: {fileID: 281337345}
-    - target: {fileID: 114823282858181522, guid: 7bcb05f4ca1854c42b9f630e717e8226,
-        type: 2}
-      propertyPath: collisionMask.m_Bits
-      value: 16896
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bcb05f4ca1854c42b9f630e717e8226, type: 2}
   m_IsPrefabAsset: 0
@@ -3047,16 +3042,6 @@ Prefab:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1447593850}
-    - target: {fileID: 114090550302567018, guid: dc19e8fa8f7db6b4ea7836637a2903c2,
-        type: 2}
-      propertyPath: maxSlopeAngle
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114090550302567018, guid: dc19e8fa8f7db6b4ea7836637a2903c2,
-        type: 2}
-      propertyPath: collisionMask.m_Bits
-      value: 16896
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc19e8fa8f7db6b4ea7836637a2903c2, type: 2}
   m_IsPrefabAsset: 0

@@ -135,8 +135,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1939743782304720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.768, z: 0}
-  m_LocalScale: {x: 3, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: 1.9, z: 0}
+  m_LocalScale: {x: 2.75, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4656156387326660}
   m_RootOrder: 0
@@ -162,7 +162,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047889007067384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.000001, y: 2.18, z: 0}
+  m_LocalPosition: {x: -32.85, y: 2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4324381218494090}
@@ -306,8 +306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionMask:
     serializedVersion: 2
-    m_Bits: 512
-  maxSlopeAngle: 80
+    m_Bits: 16896
+  maxSlopeAngle: 50
   facingRight: 0
 --- !u!114 &114174105301895270
 MonoBehaviour:
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
-  pushSpeed: 1
+  pushSpeed: 4
 --- !u!114 &114490258231722636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -407,7 +407,7 @@ MonoBehaviour:
   accelerationTimeGrounded: 0
   moveSpeed: 4
   meleeAtt: {fileID: 114769583604076132}
-  activeAttackTime: 1
+  activeAttackTime: 100
   gravity: 0
   maxJumpVelocity: 0
   minJumpVelocity: 0

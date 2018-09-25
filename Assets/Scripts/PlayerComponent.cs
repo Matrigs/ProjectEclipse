@@ -101,6 +101,7 @@ public class PlayerComponent : MonoBehaviour
         if (IlioActionButtonPressed)
         {
             IlioAction(true);
+			animator.SetBool ("ShieldPlatform", true);
         }
 		else if (controller.collisionsInf.below) {
 			velocity.y = maxJumpVelocity;
@@ -111,6 +112,7 @@ public class PlayerComponent : MonoBehaviour
     {
         if (IlioActionButtonPressed)
         {
+			animator.SetBool ("ShieldPlatform", false);
         }
         else if (velocity.y > minJumpVelocity) {
 			velocity.y = minJumpVelocity;
@@ -144,17 +146,20 @@ public class PlayerComponent : MonoBehaviour
         ActionButton();
 		StartCoroutine(DoMeleeAttack(activeAttackTime));
 		animator.SetBool ("Action", true);
-
+		animator.SetBool ("ShieldPlatform", false);
 		if (character == PlayerCharacter.Ilio) {
 			IlioActionButtonPressed = true;	
+			moveSpeed = moveSpeed - 1;
 			ChangePushObjectStatus(true);
 		}
     }
 	public void OnActionUp(){
 		animator.SetBool ("Action", false);
+		animator.SetBool ("ShieldPlatform", false);
 		if (IlioActionButtonPressed)
 		{
 			IlioActionButtonPressed = false;
+			moveSpeed = moveSpeed + 1;
 			IlioAction(false);
 			ChangePushObjectStatus(false);
 		}		
@@ -174,11 +179,12 @@ public class PlayerComponent : MonoBehaviour
 		if (character == PlayerCharacter.Ilio) {
 			shieldPlatform.SetActive (status);
 			animator.SetBool ("ShieldPlatform", status);
-
-			if (IlioActionButtonPressed)
+			if (IlioActionButtonPressed) {
 				ChangePushObjectStatus (!status);
-			else
+			} else {
 				ChangePushObjectStatus (false);
+				animator.SetBool ("ShieldPlatform", false);
+			}
 		}
     }
 
