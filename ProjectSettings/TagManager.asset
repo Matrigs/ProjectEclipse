@@ -12,6 +12,7 @@ TagManager:
   - Spawnpoint
   - Wall
   - Door
+  - Falling
   layers:
   - Default
   - TransparentFX
