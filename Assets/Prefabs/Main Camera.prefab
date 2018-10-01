@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 20209983031283546}
   - component: {fileID: 81136676391344500}
   - component: {fileID: 114604334026457168}
+  - component: {fileID: 114388436917374116}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -35,8 +36,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1631760427546740}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.335001, y: 3.6414452, z: -29.999994}
+  m_LocalRotation: {x: 0, y: 0.00000015402219, z: 0, w: 1}
+  m_LocalPosition: {x: -42.500004, y: 2.2106001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,11 +63,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
+  near clip plane: 0.1
   far clip plane: 100
-  field of view: 10
-  orthographic: 0
-  orthographic size: 1
+  field of view: 9.189876
+  orthographic: 1
+  orthographic size: 3
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -89,7 +90,7 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1631760427546740}
   m_Enabled: 1
---- !u!114 &114604334026457168
+--- !u!114 &114388436917374116
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,18 +98,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 1631760427546740}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114604334026457168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1631760427546740}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72d27175e0ba7b145a8896d48cd39673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
   - {fileID: 0}
   - {fileID: 0}
-  offset: {x: 0, y: 1.5, z: -30}
+  offset: {x: 0, y: 0, z: -30}
   smoothTime: 0.5
-  minZoom: 20
+  minZoom: 30
   maxZoom: 10
-  zoomLimiter: 50
-  limitYMin: 0
-  limitYMax: 0
-  limitXMin: 0
-  limitXMax: 0
+  zoomLimiter: 10

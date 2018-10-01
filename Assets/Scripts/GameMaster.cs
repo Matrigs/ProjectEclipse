@@ -20,9 +20,11 @@ public class GameMaster : MonoBehaviour {
 		}
 	}
 
-	//public int spawnDelay;
+	//public int spawnDelay = 2;
 
 	public void RespawnPlayer () {
+		//yield return new WaitForSeconds (spawnDelay);
+
 		playerPrefabIlio.transform.position = spawnPosition + Vector3.left;
 		playerPrefabLuna.transform.position = spawnPosition + Vector3.right;
 
