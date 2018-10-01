@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Eclipse/Level Test 5.unity
     guid: e14207b9756cd74409986b8fab9d9856
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Eclipse/Level Test 6.unity
     guid: 3ab571c1931c824428e862cf58a0a3f8
+  - enabled: 1
+    path: Assets/Scenes/Eclipse/Level Test 4+5.unity
+    guid: 51f8fb60fc8dda44ea1100f9ae411c62
   m_configObjects: {}
