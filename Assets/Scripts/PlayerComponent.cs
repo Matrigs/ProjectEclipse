@@ -157,7 +157,7 @@ public class PlayerComponent : MonoBehaviour
     }
     public void OnActionDown()
     {
-        ActionButton();
+        if(ActionButton != null) ActionButton();
 		StartCoroutine(DoMeleeAttack(activeAttackTime));
 		animator.SetBool ("Action", true);
 		animator.SetBool ("ShieldPlatform", false);
