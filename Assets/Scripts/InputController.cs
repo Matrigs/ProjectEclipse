@@ -35,7 +35,8 @@ public class InputController : MonoBehaviour
 	}
 	void Update()
 	{		
-		if(InputManager.Devices.Count == playerNumber)
+		Debug.Log(InputManager.Devices.Count);
+		if(InputManager.Devices.Count >= playerNumber)
 		{
 			device = InputManager.Devices[playerNumber-1];
 			if(device.Action1.WasPressed)
@@ -54,6 +55,14 @@ public class InputController : MonoBehaviour
 			{
 				playerComp.OnActionUp();
 			}
+			if(device.LeftStickUp.WasPressed){
+				if(playerComp.IlioActionButtonPressed){
+					playerComp.OnJumpInputDown();
+				}
+			}
+			if(device.LeftStickUp.WasReleased){
+				playerComp.OnJumpInputUp();
+			}
 		}
 
 		Vector2 directionalInput;
@@ -63,8 +72,11 @@ public class InputController : MonoBehaviour
 		{
 			directionalInput = new Vector2(Input.GetAxisRaw(pKeys.axis), Input.GetAxisRaw("Vertical"));
 		}
-		else
+		else if(device == null)
 		{
+			directionalInput = new Vector2(Input.GetAxisRaw(pKeys.axis), Input.GetAxisRaw("Vertical"));
+		}
+		else{
 			directionalInput = device.LeftStick;
 		}
 

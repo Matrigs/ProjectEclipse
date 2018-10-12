@@ -64,7 +64,7 @@ public class PlayerComponent : MonoBehaviour
 	[Header("Ilio action")]
 	public GameObject shieldPlatform;
 	private PushObject pushObjectComponent;
-    private bool IlioActionButtonPressed = false;
+    [HideInInspector] public bool IlioActionButtonPressed = false;
 
     void Start() {
 		controller = GetComponent<Controller2D>();
