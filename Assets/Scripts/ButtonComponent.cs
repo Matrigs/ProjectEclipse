@@ -28,17 +28,11 @@ public class ButtonComponent : InteractiveComponent
     
     private void Start()
     {
-        PlayerComponent.IlioInstance.ActionButton += IlioAction;
         PlayerComponent.LunaInstance.ActionButton += LunaAction;
     }
     private void OnDisable()
     {
-        PlayerComponent.IlioInstance.ActionButton -= IlioAction;
         PlayerComponent.LunaInstance.ActionButton -= LunaAction;
-    }
-
-    public void IlioAction(){
-        if(ilioPresence) Action();
     }
 
     public void LunaAction(){
