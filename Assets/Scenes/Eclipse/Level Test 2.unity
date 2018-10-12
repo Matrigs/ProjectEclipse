@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 628085147}
+  FirstOptionToSelect: {fileID: 1758718342}
 --- !u!1 &27952745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3443,7 +3444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e87b0b3df9d2e4fa01110066981005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosition: {x: 0, y: 0, z: 0}
   playerPrefabIlio: {fileID: 423727738}
   playerPrefabLuna: {fileID: 148120793}
   spawnPoint: {fileID: 1447593850}
@@ -4189,6 +4189,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06cc7c70c5ac91144a3f0aba3b420425, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1758718342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1804594828176880, guid: 06cc7c70c5ac91144a3f0aba3b420425,
+    type: 2}
+  m_PrefabInternal: {fileID: 1758718341}
 --- !u!1001 &1850451853
 Prefab:
   m_ObjectHideFlags: 0

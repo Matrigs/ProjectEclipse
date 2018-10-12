@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 628085147}
+  FirstOptionToSelect: {fileID: 1758718342}
 --- !u!4 &34574577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4324381218494090, guid: dc19e8fa8f7db6b4ea7836637a2903c2,
@@ -5092,7 +5093,7 @@ Prefab:
     - target: {fileID: 20209983031283546, guid: 6c7184c3201280546b56e4b83a1a02ba,
         type: 2}
       propertyPath: field of view
-      value: 9.182491
+      value: 9.19939
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7184c3201280546b56e4b83a1a02ba, type: 2}
@@ -6036,6 +6037,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06cc7c70c5ac91144a3f0aba3b420425, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1758718342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1804594828176880, guid: 06cc7c70c5ac91144a3f0aba3b420425,
+    type: 2}
+  m_PrefabInternal: {fileID: 1758718341}
 --- !u!1001 &1772428561
 Prefab:
   m_ObjectHideFlags: 0

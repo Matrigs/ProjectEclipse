@@ -2382,12 +2382,17 @@ Prefab:
     - target: {fileID: 20209983031283546, guid: 6c7184c3201280546b56e4b83a1a02ba,
         type: 2}
       propertyPath: field of view
-      value: 9.182474
+      value: 9.199373
       objectReference: {fileID: 0}
     - target: {fileID: 20209983031283546, guid: 6c7184c3201280546b56e4b83a1a02ba,
         type: 2}
       propertyPath: orthographic size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 20209983031283546, guid: 6c7184c3201280546b56e4b83a1a02ba,
+        type: 2}
+      propertyPath: far clip plane
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7184c3201280546b56e4b83a1a02ba, type: 2}
@@ -6733,6 +6738,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4820168000652374, guid: 5ddf60813947e344c801f57beb57ce8c,
     type: 2}
   m_PrefabInternal: {fileID: 1187967145}
+--- !u!1 &1219403988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1804594828176880, guid: 06cc7c70c5ac91144a3f0aba3b420425,
+    type: 2}
+  m_PrefabInternal: {fileID: 173391402}
 --- !u!1 &1245840619
 GameObject:
   m_ObjectHideFlags: 0
@@ -11659,6 +11669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 173391404}
+  FirstOptionToSelect: {fileID: 1219403988}
 --- !u!114 &1972038463
 MonoBehaviour:
   m_ObjectHideFlags: 0
