@@ -12,13 +12,15 @@ public class HidePlayer : MonoBehaviour {
 	[SerializeField]
 	private bool _fromTheRight;
 	private Vector2 positionToGo;
-	private void OnEnable()
+    private void OnEnable()
     {
-        PlayerComponent.ActionButton += Action;
+        PlayerComponent.IlioInstance.ActionButton += Action;
+        PlayerComponent.LunaInstance.ActionButton += Action;
     }
     private void OnDisable()
     {
-        PlayerComponent.ActionButton -= Action;
+        PlayerComponent.IlioInstance.ActionButton -= Action;
+        PlayerComponent.LunaInstance.ActionButton -= Action;
     }
 	void Update()
 	{

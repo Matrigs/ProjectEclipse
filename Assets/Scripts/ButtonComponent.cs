@@ -10,7 +10,7 @@ public class ButtonComponent : InteractiveComponent
     public buttonState currentState = buttonState.active;
 
     [SerializeField]
-    private bool playerPresence;
+    private bool ilioPresence, lunaPresence;
     [SerializeField]
     private List<ButtonMaterial> ButtonMaterials = new List<ButtonMaterial>(2);
 
@@ -21,25 +21,39 @@ public class ButtonComponent : InteractiveComponent
         public Material material;
     }
     public enum buttonState {active, inactive}
+
+    private void OnEnable(){
+        if(PlayerComponent.IlioInstance != null) Start();
+    }
     
-    private void OnEnable()
+    private void Start()
     {
-        PlayerComponent.ActionButton += Action;
+        PlayerComponent.IlioInstance.ActionButton += IlioAction;
+        PlayerComponent.LunaInstance.ActionButton += LunaAction;
     }
     private void OnDisable()
     {
-        PlayerComponent.ActionButton -= Action;
+        PlayerComponent.IlioInstance.ActionButton -= IlioAction;
+        PlayerComponent.LunaInstance.ActionButton -= LunaAction;
+    }
+
+    public void IlioAction(){
+        if(ilioPresence) Action();
+    }
+
+    public void LunaAction(){
+        if(lunaPresence) Action();
     }
 
     public override void Action()
     {
         //base.Action();
-        if (playerPresence && currentState == buttonState.active)
+        if (currentState == buttonState.active)
         {
             Debug.Log("DoorOpen");
             ChangeState();
             attachedReactionObject.Reaction();
-			attachedReactionObject2.Reaction();
+			if(attachedReactionObject2 != null) attachedReactionObject2.Reaction();
         }
     }
     void ChangeState()
@@ -66,14 +80,18 @@ public class ButtonComponent : InteractiveComponent
         Debug.Log("Hero");
         if (collision.CompareTag("Player"))
         {
-            playerPresence = true;
+            PlayerComponent.PlayerCharacter character = collision.gameObject.GetComponent<PlayerComponent>().character;
+            if(character == PlayerComponent.PlayerCharacter.Ilio) ilioPresence = true;
+            if(character == PlayerComponent.PlayerCharacter.Luna) lunaPresence = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            playerPresence = false;
+            PlayerComponent.PlayerCharacter character = collision.gameObject.GetComponent<PlayerComponent>().character;
+            if(character == PlayerComponent.PlayerCharacter.Ilio) ilioPresence = false;
+            if(character == PlayerComponent.PlayerCharacter.Luna) lunaPresence = false;
         }
     }
     private void OnDrawGizmos()
