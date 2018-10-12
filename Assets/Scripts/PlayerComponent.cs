@@ -54,6 +54,7 @@ public class PlayerComponent : MonoBehaviour
 	Controller2D controller;
 
 	Vector2 directionalInput;
+	[Tooltip("O quanto o volante tem que estar para cima para ignorar o personagem andar para os lados")][Range(0,1)]public float IgnoreMoveThreshold = 0.8f;
     [SerializeField]
     [Space]
 	private Transform spawnPoint;
@@ -121,7 +122,10 @@ public class PlayerComponent : MonoBehaviour
 	}
 
 	void CalculateVelocity() {
-		float targetVelocityX = directionalInput.x * moveSpeed;
+		float targetVelocityX = 0.0f;
+		if(directionalInput.y < IgnoreMoveThreshold){
+			targetVelocityX = directionalInput.x * moveSpeed;
+		}
 		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisionsInf.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 		if(velocity.y < 0f)
 		{
