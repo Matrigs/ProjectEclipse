@@ -2961,7 +2961,7 @@ GameObject:
   - component: {fileID: 818815113}
   m_Layer: 0
   m_Name: Pit (1)
-  m_TagString: Danger
+  m_TagString: Pit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5092,7 +5092,7 @@ Prefab:
     - target: {fileID: 20209983031283546, guid: 6c7184c3201280546b56e4b83a1a02ba,
         type: 2}
       propertyPath: field of view
-      value: 9.19501
+      value: 9.182491
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7184c3201280546b56e4b83a1a02ba, type: 2}
@@ -5723,7 +5723,7 @@ GameObject:
   - component: {fileID: 1724259955}
   m_Layer: 0
   m_Name: Pit
-  m_TagString: Danger
+  m_TagString: Pit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6029,6 +6029,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 12244615}
+    - target: {fileID: 1263706509677506, guid: 06cc7c70c5ac91144a3f0aba3b420425, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06cc7c70c5ac91144a3f0aba3b420425, type: 2}
   m_IsPrefabAsset: 0

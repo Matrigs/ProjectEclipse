@@ -49,6 +49,16 @@ public class Life : MonoBehaviour {
 				GameMaster.gm.playerPrefabLuna.gameObject.SetActive (true);
 			}
 		}
+
+		if (info.collider.tag == "Pit") {
+			Debug.Log ("YOU HIT A PIT");
+			GameMaster.gm.playerPrefabIlio.gameObject.SetActive (false);
+			GameMaster.gm.playerPrefabLuna.gameObject.SetActive (false);
+			//Destroy (this);
+			GameMaster.gm.RespawnPlayer ();
+			GameMaster.gm.playerPrefabIlio.gameObject.SetActive (true);
+			GameMaster.gm.playerPrefabLuna.gameObject.SetActive (true);
+		}
 			
 	}
 
