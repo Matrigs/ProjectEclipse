@@ -21,7 +21,8 @@ public class Controller2D : RaycastController {
 			/*if (Mathf.Abs(deltaMove.y) > 0.1) {
 				animator.SetTrigger ("MoveEnd");
 			}
-			else*/ if (Mathf.Abs (deltaMove.x) > 0.01) {
+			else*/ 
+			if (Mathf.Abs (deltaMove.x) > 0.01) {
 				animator.SetTrigger ("MoveStart");
 			} else {
 				animator.SetTrigger ("MoveEnd");

@@ -37,6 +37,12 @@ public class PlayerComponent : MonoBehaviour
 	public MeleeAttack meleeAtt;
 	public float activeAttackTime = 0.5f;
 
+	[Space]
+	[Header("Sounds")]
+	public AudioSource walk;
+	public AudioSource jump;
+	public AudioSource action;
+	public AudioSource land;
 
     [Space]
     [Header("PRIVATE DEBUG SHIT")]
@@ -107,7 +113,6 @@ public class PlayerComponent : MonoBehaviour
 
 	public void SetDirectionalInput (Vector2 input) {
 		directionalInput = input;
-
 	}
 
 	public void OnJumpInputDown() 
@@ -116,9 +121,11 @@ public class PlayerComponent : MonoBehaviour
         {
             IlioAction(true);
 			animator.SetBool ("ShieldPlatform", true);
+			action.Play ();
         }
 		else if (controller.collisionsInf.below) {
 			velocity.y = maxJumpVelocity;
+			jump.Play ();
 		}
 	}
 
@@ -140,6 +147,7 @@ public class PlayerComponent : MonoBehaviour
 		if(velocity.y < 0f)
 		{
 			velocity.y += gravity * fallMultipler * Time.deltaTime;
+			land.Play ();
 		}
 		else
 		{			
@@ -157,7 +165,9 @@ public class PlayerComponent : MonoBehaviour
     }
     public void OnActionDown()
     {
-        if(ActionButton != null) ActionButton();
+		action.Play ();
+
+		if(ActionButton != null) ActionButton();
 		StartCoroutine(DoMeleeAttack(activeAttackTime));
 		animator.SetBool ("Action", true);
 		animator.SetBool ("ShieldPlatform", false);

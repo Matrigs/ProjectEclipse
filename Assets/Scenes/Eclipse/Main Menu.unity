@@ -927,6 +927,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &539393777 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+    type: 2}
+  m_PrefabInternal: {fileID: 738315101}
+  m_Script: {fileID: 11500000, guid: 9e3454d679df42e4ca3fa6cf498a62ff, type: 3}
 --- !u!1 &548314123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,6 +1112,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 539393777}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Accept
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1420,6 +1437,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4796337852577964, guid: fc780ac590f9b9d42b44d1866fdf603a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1457,6 +1479,81 @@ Prefab:
       propertyPath: sounds.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: 23844ca2588ff704cbad3a1645ed6689, type: 3}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[1].name
+      value: Accept
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7503c2508463996469720a624b332e0d, type: 3}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[1].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[2].name
+      value: Decline
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 406ed95a930658f43875ad4579d7ecd5, type: 3}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[2].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[3].name
+      value: Conclude
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 723d7eb3bc719524fb01d800e0b40820, type: 3}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922653802036060, guid: fc780ac590f9b9d42b44d1866fdf603a,
+        type: 2}
+      propertyPath: sounds.Array.data[3].loop
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc780ac590f9b9d42b44d1866fdf603a, type: 2}
   m_IsPrefabAsset: 0
@@ -3164,6 +3261,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 539393777}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Conclude
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

@@ -10,6 +10,9 @@ public class Checkpoint : MonoBehaviour {
 	//public GameMaster gamespawn;
 	List <Collider2D> players = new List<Collider2D>();
 	public GameObject emblem;
+	public AudioSource check1;
+	public AudioSource check2;
+	public AudioSource check3;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +38,9 @@ public class Checkpoint : MonoBehaviour {
 		if (players.Count == 2 && !IsThisTheLastCheckpoint()) {
 			Debug.Log ("Checkpoint Reached!");
 			emblem.SetActive (true);
+			check1.Play ();
+			check2.Play ();
+			check3.Play ();
 			GameMaster.gm.checkpoints.Add(transform);
 		}
 	}
