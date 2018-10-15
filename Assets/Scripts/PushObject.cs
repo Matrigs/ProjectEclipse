@@ -5,6 +5,7 @@ using UnityEngine;
 public class PushObject : MonoBehaviour {
 	[HideInInspector] public bool activated = false;
 	public float pushSpeed = 1f;
+	public AudioSource pushing;
 
 	void OnCollisionStay2D(Collision2D col){
 		if (activated && (col.gameObject.layer == LayerMask.NameToLayer ("Hurt") || col.gameObject.layer == LayerMask.NameToLayer ("MovableObstacle"))) {

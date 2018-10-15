@@ -55,10 +55,19 @@ MonoBehaviour:
   sounds:
   - name: Level
     clip: {fileID: 8300000, guid: 061454000e5f3274ea736582066c1729, type: 3}
-    volume: 1
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
     loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Death
+    clip: {fileID: 8300000, guid: b51b11fcaa4e30948968dad3109b6663, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}

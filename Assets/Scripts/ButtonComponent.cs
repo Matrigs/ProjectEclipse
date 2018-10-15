@@ -9,8 +9,7 @@ public class ButtonComponent : InteractiveComponent
 	public ReactiveComponent attachedReactionObject2;
     public buttonState currentState = buttonState.active;
 
-	public AudioSource crystal1;
-	public AudioSource crystal2;
+	public AudioSource crystal;
 
     [SerializeField]
     private bool ilioPresence, lunaPresence;
@@ -49,8 +48,7 @@ public class ButtonComponent : InteractiveComponent
         {
             Debug.Log("DoorOpen");
             ChangeState();
-			crystal1.Play ();
-			crystal2.Play ();
+			crystal.Play ();
             attachedReactionObject.Reaction();
 			if(attachedReactionObject2 != null) attachedReactionObject2.Reaction();
         }

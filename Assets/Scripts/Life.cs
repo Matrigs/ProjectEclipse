@@ -41,6 +41,7 @@ public class Life : MonoBehaviour {
 			else{
 				Debug.Log ("YOU ARE DEAD");
 				Destroy (info.gameObject);
+				FindObjectOfType<AudioManager> ().Play ("Death");
 				GameMaster.gm.playerPrefabIlio.gameObject.SetActive (false);
 				GameMaster.gm.playerPrefabLuna.gameObject.SetActive (false);
 				//Destroy (this);
@@ -52,6 +53,7 @@ public class Life : MonoBehaviour {
 
 		if (info.collider.tag == "Pit") {
 			Debug.Log ("YOU HIT A PIT");
+			FindObjectOfType<AudioManager> ().Play ("Death");
 			GameMaster.gm.playerPrefabIlio.gameObject.SetActive (false);
 			GameMaster.gm.playerPrefabLuna.gameObject.SetActive (false);
 			//Destroy (this);

@@ -7,6 +7,7 @@ public class Shoot : MonoBehaviour {
 
 	public GameObject Bullet;
 	public float timeOfShots;
+	public AudioSource shotNoise;
 
 	public EnemyController dirControl;
 
@@ -25,6 +26,8 @@ public class Shoot : MonoBehaviour {
 				var obj = Instantiate (Bullet, transform.position + new Vector3 (0, 0.2f, 0), Quaternion.identity);
 
 				obj.GetComponent<Bullet> ().enemyControl = dirControl;
+				shotNoise.Play ();
+
 			}
 		}
 
