@@ -31,8 +31,7 @@ public class PauseMenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//se o incontroller estiver ativado, permitir sair e navegar pelo menu com o controle
-
-		foreach(InputDevice device in devices){
+		if(devices != null) foreach(InputDevice device in devices){
 			if(device.CommandIsPressed){
 				if (GameIsPaused) {
 					Resume ();

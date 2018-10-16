@@ -11,6 +11,8 @@ public class InputController : MonoBehaviour
 	[Range(1,2)]
 	public int playerNumber;
 	public bool isis = false;
+
+	public bool canInput = true;
 	InputDevice device;	
 
 	private bool _controls;
@@ -35,6 +37,8 @@ public class InputController : MonoBehaviour
 	}
 	void Update()
 	{		
+		if(!canInput) return;
+
 		Debug.Log(InputManager.Devices.Count);
 		if(InputManager.Devices.Count >= playerNumber)
 		{
