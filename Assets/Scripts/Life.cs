@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Life : MonoBehaviour {
 
+	public Animator animator;
+	public int spawnDelay = 2;
+
 	/*
 	[System.Serializable]
 	public class PlayerStats {
@@ -42,26 +45,52 @@ public class Life : MonoBehaviour {
 				Debug.Log ("YOU ARE DEAD");
 				Destroy (info.gameObject);
 				FindObjectOfType<AudioManager> ().Play ("Death");
-				GameMaster.gm.playerPrefabIlio.gameObject.SetActive (false);
-				GameMaster.gm.playerPrefabLuna.gameObject.SetActive (false);
-				//Destroy (this);
-				GameMaster.gm.RespawnPlayer ();
-				GameMaster.gm.playerPrefabIlio.gameObject.SetActive (true);
-				GameMaster.gm.playerPrefabLuna.gameObject.SetActive (true);
+
+				Time.timeScale = 0f;
+				animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+				animator.SetBool ("Death", true);
+
+				StartCoroutine (SpawnDelayer());
+
+
 			}
 		}
 
 		if (info.collider.tag == "Pit") {
 			Debug.Log ("YOU HIT A PIT");
 			FindObjectOfType<AudioManager> ().Play ("Death");
-			GameMaster.gm.playerPrefabIlio.gameObject.SetActive (false);
-			GameMaster.gm.playerPrefabLuna.gameObject.SetActive (false);
-			//Destroy (this);
-			GameMaster.gm.RespawnPlayer ();
-			GameMaster.gm.playerPrefabIlio.gameObject.SetActive (true);
-			GameMaster.gm.playerPrefabLuna.gameObject.SetActive (true);
+
+			Time.timeScale = 0f;
+			animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+			animator.SetBool ("Death", true);
+
+			StartCoroutine (SpawnDelayer());
+
 		}
 			
+	}
+
+	IEnumerator SpawnDelayer () {
+		yield return StartCoroutine (WaitForRealSeconds(spawnDelay));
+		Time.timeScale = 1f;
+
+		GameMaster.gm.playerPrefabIlio.gameObject.SetActive (false);
+		GameMaster.gm.playerPrefabLuna.gameObject.SetActive (false);
+
+		GameMaster.gm.RespawnPlayer ();
+		GameMaster.gm.playerPrefabIlio.gameObject.SetActive (true);
+		GameMaster.gm.playerPrefabLuna.gameObject.SetActive (true);
+
+
+		animator.SetBool ("Death", false);
+		animator.updateMode = AnimatorUpdateMode.Normal;
+	}
+
+	public static IEnumerator WaitForRealSeconds(float time) {
+		float start = Time.realtimeSinceStartup;
+		while (Time.realtimeSinceStartup < start + time) {
+			yield return null;
+		}
 	}
 
 }

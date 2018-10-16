@@ -99,8 +99,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1124737812595068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.7155886, y: -2.561583, z: 0.52995074}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -15.990456, y: 14.962, z: 0.52995074}
+  m_LocalScale: {x: 0.403554, y: 0.403554, z: 0.403554}
   m_Children:
   - {fileID: 4540269168620310}
   - {fileID: 4017311835184258}
@@ -175,7 +175,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.75, y: 1.4726667}
+  m_Size: {x: 2.8263533, y: 5.0445786}
   m_Direction: 0
 --- !u!82 &82272543159324384
 AudioSource:
@@ -396,7 +396,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6ed8138943ef3124f8817cefd38f63a3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fce9cb556c8071445b1551c4e0e2e1d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
