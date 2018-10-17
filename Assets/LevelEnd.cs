@@ -6,6 +6,7 @@ public class LevelEnd : MonoBehaviour {
 
     public GameObject NextLevel;
     public Transform NextLevelSpawnPoint;
+	public Animator fadeAnimator;
 
     private List<GameObject> _playersOnTrigger =  new List<GameObject>();
 
@@ -18,7 +19,8 @@ public class LevelEnd : MonoBehaviour {
     {
         if(_playersOnTrigger.Count == 2) // If the number of player in the Level End trigger is Equal to 2
         {
-            transform.parent.gameObject.SetActive(false); // Turn off the whole current Level
+			fadeAnimator.SetTrigger ("FadeOut");
+			transform.parent.gameObject.SetActive(false); // Turn off the whole current Level
             if (!NextLevel.activeInHierarchy) // If the next level is turned off
             {
                 NextLevel.SetActive(true); //Turn it on
@@ -28,7 +30,7 @@ public class LevelEnd : MonoBehaviour {
                 }
                 _playersOnTrigger.Clear();
             } 
-
+			fadeAnimator.SetTrigger ("FadeIn");
         }
     }
 
