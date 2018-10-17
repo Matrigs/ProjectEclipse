@@ -54,9 +54,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224329925718678298}
-  - component: {fileID: 114223834237510986}
   - component: {fileID: 114215530836513784}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,22 +154,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
---- !u!114 &114223834237510986
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1116482730008960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 314a9b2fd3f0ccc4fa438e6615a691f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeAnimator: {fileID: 0}
-  logo: {fileID: 0}
-  mainMenuUI: {fileID: 1116482730008960}
-  creditsScreenUI: {fileID: 0}
-  fadeDelay: 2
 --- !u!114 &114361911135276784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,7 +204,7 @@ MonoBehaviour:
           m_StringArgument: Accept
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114223834237510986}
+      - m_Target: {fileID: 0}
         m_MethodName: Credits
         m_Mode: 1
         m_Arguments:
@@ -441,7 +424,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114223834237510986}
+      - m_Target: {fileID: 0}
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -645,7 +628,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114223834237510986}
+      - m_Target: {fileID: 0}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
