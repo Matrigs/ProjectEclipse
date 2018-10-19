@@ -31,7 +31,7 @@ public class PlatformController : RaycastController {
 		}
 	}
 
-	void Update () {
+	public void Update () {
 
 		UpdateRaycastOrigins ();
 
