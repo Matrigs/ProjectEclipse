@@ -51,11 +51,11 @@ public class InputController : MonoBehaviour
 			{
 				playerComp.OnJumpInputUp();
 			}
-			if(device.Action2.WasPressed)
+			if(device.Action3.WasPressed)
 			{
 				playerComp.OnActionDown();
 			}
-			if(device.Action2.WasReleased)
+			if(device.Action3.WasReleased)
 			{
 				playerComp.OnActionUp();
 			}
