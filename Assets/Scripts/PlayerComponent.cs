@@ -44,6 +44,13 @@ public class PlayerComponent : MonoBehaviour
 	public AudioSource action;
 	public AudioSource land;
 
+	/*
+	[Space]
+	[Header("Particle Effects")]
+	public GameObject dustParticle;
+	private bool spawnDust;
+	*/
+
     [Space]
     [Header("PRIVATE DEBUG SHIT")]
 	[SerializeField]
@@ -148,6 +155,7 @@ public class PlayerComponent : MonoBehaviour
 		{
 			velocity.y += gravity * fallMultipler * Time.deltaTime;
 			land.Play ();
+
 		}
 		else
 		{			

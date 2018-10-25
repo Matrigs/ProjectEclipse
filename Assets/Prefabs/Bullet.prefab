@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1807858347303534
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +181,7 @@ MonoBehaviour:
   recoverTime: 10
   HP: 1
   hurtboxState: 0
+  parried: 0
 --- !u!114 &114717772696644014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyControl: {fileID: 0}
-  velocity: 3
+  velocity: 5
 --- !u!212 &212099039029515604
 SpriteRenderer:
   m_ObjectHideFlags: 1
