@@ -39,7 +39,6 @@ public class InputController : MonoBehaviour
 	{		
 		if(!canInput) return;
 
-		Debug.Log(InputManager.Devices.Count);
 		if(InputManager.Devices.Count >= playerNumber)
 		{
 			device = InputManager.Devices[playerNumber-1];

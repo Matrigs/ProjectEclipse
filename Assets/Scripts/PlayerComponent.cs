@@ -123,17 +123,21 @@ public class PlayerComponent : MonoBehaviour
 		if (controller.collisionsInf.above || controller.collisionsInf.below) {
 			velocity.y = 0;
 		}
-		/* REMOVER NO FDS
+		// REMOVER NO FDS
 		var deltaY = transform.position.y - lastY;
 
 		if (deltaY < 0 && animator.GetCurrentAnimatorStateInfo (0).IsName ("JumpUp" + charname)) {
 			animator.SetTrigger ("JumpTransition"); 
 		}
 
+		if(controller.collisionsInf.below && animator.GetCurrentAnimatorStateInfo(0).IsName("JumpDown " + charname)){ 
+			animator.SetTrigger ("Jump end"); 
+			StartCoroutine(JumpDelay("Jump end"));
+		}
+
 		animator.SetFloat ("DeltaY", deltaY);
 
 		lastY = transform.position.y;
-		*/
 	}
 
 	public void SetDirectionalInput (Vector2 input) {
@@ -151,18 +155,16 @@ public class PlayerComponent : MonoBehaviour
 		else if (controller.collisionsInf.below) {
 			velocity.y = maxJumpVelocity;
 			// REMOVER NO FDS
-			//animator.SetTrigger ("Jump");
+			animator.SetTrigger ("Jump");
 			jump.Play ();
-			// REMOVER NO FDS
-			//StartCoroutine (JumpDelay("JumpTransition"));
+			StartCoroutine (JumpDelay("JumpTransition"));
 		}
 	}
-	/* REMOVER NO FDS
-	public IEnumerator JumpDelay (string trigger) {
-		yield return new WaitForSeconds (0.4f);
+	// REMOVER NO FDS
+	public IEnumerator JumpDelay (string trigger, float duration = 0.4f) {
+		yield return new WaitForSeconds (duration);
 		animator.SetTrigger(trigger);
 	}
-	*/
 	public void OnJumpInputUp()
     {
         if (IlioActionButtonPressed)
@@ -181,10 +183,7 @@ public class PlayerComponent : MonoBehaviour
 		if(velocity.y < 0f)
 		{
 			velocity.y += gravity * fallMultipler * Time.deltaTime;
-			// REMOVER NO FDS
-			//StartCoroutine (JumpDelay("Jump end"));
-			land.Play ();
-
+			if(!land.isPlaying) land.Play ();
 		}
 		else
 		{			
