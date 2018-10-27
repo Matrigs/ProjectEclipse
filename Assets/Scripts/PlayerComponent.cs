@@ -131,6 +131,7 @@ public class PlayerComponent : MonoBehaviour
 		}
 
 		if(controller.collisionsInf.below && animator.GetCurrentAnimatorStateInfo(0).IsName("JumpDown " + charname)){ 
+			land.Play ();
 			animator.SetTrigger ("Jump end"); 
 			StartCoroutine(JumpDelay("Jump end"));
 		}
@@ -183,7 +184,6 @@ public class PlayerComponent : MonoBehaviour
 		if(velocity.y < 0f)
 		{
 			velocity.y += gravity * fallMultipler * Time.deltaTime;
-			if(!land.isPlaying) land.Play ();
 		}
 		else
 		{			
