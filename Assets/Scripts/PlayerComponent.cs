@@ -82,13 +82,18 @@ public class PlayerComponent : MonoBehaviour
 	private PushObject pushObjectComponent;
     [HideInInspector] public bool IlioActionButtonPressed = false;
 
+	private float lastY;
+	public string charname;
+
 	void Awake(){
 		switch(character){
 			case PlayerCharacter.Ilio:
 				if(IlioInstance == null) IlioInstance = this;
+				charname = "Ilio";
 				break;
 			case PlayerCharacter.Luna:
 				if(LunaInstance == null) LunaInstance = this;
+				charname = "Luna";
 				break;
 		}
 	}
@@ -100,6 +105,8 @@ public class PlayerComponent : MonoBehaviour
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
+
+		lastY = transform.position.y;
 	}
 	void OnEnable()
 	{		
@@ -116,6 +123,17 @@ public class PlayerComponent : MonoBehaviour
 		if (controller.collisionsInf.above || controller.collisionsInf.below) {
 			velocity.y = 0;
 		}
+		/* REMOVER NO FDS
+		var deltaY = transform.position.y - lastY;
+
+		if (deltaY < 0 && animator.GetCurrentAnimatorStateInfo (0).IsName ("JumpUp" + charname)) {
+			animator.SetTrigger ("JumpTransition"); 
+		}
+
+		animator.SetFloat ("DeltaY", deltaY);
+
+		lastY = transform.position.y;
+		*/
 	}
 
 	public void SetDirectionalInput (Vector2 input) {
@@ -132,10 +150,19 @@ public class PlayerComponent : MonoBehaviour
         }
 		else if (controller.collisionsInf.below) {
 			velocity.y = maxJumpVelocity;
+			// REMOVER NO FDS
+			//animator.SetTrigger ("Jump");
 			jump.Play ();
+			// REMOVER NO FDS
+			//StartCoroutine (JumpDelay("JumpTransition"));
 		}
 	}
-
+	/* REMOVER NO FDS
+	public IEnumerator JumpDelay (string trigger) {
+		yield return new WaitForSeconds (0.4f);
+		animator.SetTrigger(trigger);
+	}
+	*/
 	public void OnJumpInputUp()
     {
         if (IlioActionButtonPressed)
@@ -154,6 +181,8 @@ public class PlayerComponent : MonoBehaviour
 		if(velocity.y < 0f)
 		{
 			velocity.y += gravity * fallMultipler * Time.deltaTime;
+			// REMOVER NO FDS
+			//StartCoroutine (JumpDelay("Jump end"));
 			land.Play ();
 
 		}
@@ -181,7 +210,7 @@ public class PlayerComponent : MonoBehaviour
 		animator.SetBool ("ShieldPlatform", false);
 		if (character == PlayerCharacter.Ilio) {
 			IlioActionButtonPressed = true;	
-			moveSpeed = moveSpeed - 1;
+			moveSpeed = moveSpeed - 2;
 			ChangePushObjectStatus(true);
 		}
     }
@@ -191,7 +220,7 @@ public class PlayerComponent : MonoBehaviour
 		if (IlioActionButtonPressed)
 		{
 			IlioActionButtonPressed = false;
-			moveSpeed = moveSpeed + 1;
+			moveSpeed = moveSpeed + 2;
 			IlioAction(false);
 			ChangePushObjectStatus(false);
 		}		
