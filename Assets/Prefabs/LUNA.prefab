@@ -835,6 +835,7 @@ MonoBehaviour:
   character: 1
   shieldPlatform: {fileID: 0}
   IlioActionButtonPressed: 0
+  charname: 
 --- !u!114 &114823282858181522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -862,6 +863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbf4c977acf2aa40b0ca09390ee02d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95691320611165884}
+  spawnDelay: 2
 --- !u!114 &114973012021335094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -875,6 +878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 2
   isis: 0
+  canInput: 1
   pKeys:
     axis: Horizontal2
     jumpKey: i

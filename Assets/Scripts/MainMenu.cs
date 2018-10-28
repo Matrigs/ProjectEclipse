@@ -13,12 +13,15 @@ public class MainMenu : MonoBehaviour {
 	public bool activateCredits = false;
 	public bool activateBackToMain = false;
 
+	public void Start () {
+		Time.timeScale = 1;
+	}
+
 	public void PlayGame () {
 		fadeAnimator.SetTrigger ("FadeOut");
 
 		StartCoroutine (WaitForRealSeconds(fadeDelay));
 
-		Time.timeScale = 1;
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 	}
 

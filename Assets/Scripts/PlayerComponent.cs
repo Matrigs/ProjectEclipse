@@ -130,7 +130,7 @@ public class PlayerComponent : MonoBehaviour
 			animator.SetTrigger ("JumpTransition"); 
 		}
 
-		if(controller.collisionsInf.below && animator.GetCurrentAnimatorStateInfo(0).IsName("JumpDown " + charname)){ 
+		if(controller.collisionsInf.below && animator.GetCurrentAnimatorStateInfo(0).IsName("JumpDown" + charname)){ 
 			land.Play ();
 			animator.SetTrigger ("Jump end"); 
 			StartCoroutine(JumpDelay("Jump end"));
