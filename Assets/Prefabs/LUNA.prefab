@@ -821,7 +821,7 @@ MonoBehaviour:
   accelerationTimeGrounded: 0
   moveSpeed: 5
   meleeAtt: {fileID: 114337635206782256}
-  activeAttackTime: 0.5
+  activeAttackTime: 0.32
   walk: {fileID: 82049624062952624}
   jump: {fileID: 82103774138176938}
   action: {fileID: 82423092319556854}

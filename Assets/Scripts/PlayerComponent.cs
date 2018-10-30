@@ -44,12 +44,12 @@ public class PlayerComponent : MonoBehaviour
 	public AudioSource action;
 	public AudioSource land;
 
-	/*
+
 	[Space]
 	[Header("Particle Effects")]
 	public GameObject dustParticle;
 	private bool spawnDust;
-	*/
+
 
     [Space]
     [Header("PRIVATE DEBUG SHIT")]
@@ -117,13 +117,12 @@ public class PlayerComponent : MonoBehaviour
 	void Update() {
 		RecalculatePhysics(debug);
 		CalculateVelocity ();
-		//animator.SetFloat ("Speed", Mathf.Abs(velocityXSmoothing));
 
 		controller.Move (velocity * Time.deltaTime, false, animator);
 		if (controller.collisionsInf.above || controller.collisionsInf.below) {
 			velocity.y = 0;
 		}
-		// REMOVER NO FDS
+
 		var deltaY = transform.position.y - lastY;
 
 		if (deltaY < 0 && animator.GetCurrentAnimatorStateInfo (0).IsName ("JumpUp" + charname)) {
@@ -134,11 +133,18 @@ public class PlayerComponent : MonoBehaviour
 			land.Play ();
 			animator.SetTrigger ("Jump end"); 
 			StartCoroutine(JumpDelay("Jump end"));
+			spawnDust = true;
 		}
 
 		animator.SetFloat ("DeltaY", deltaY);
 
 		lastY = transform.position.y;
+
+		if (spawnDust == true) {
+			Instantiate (dustParticle, transform.position, Quaternion.identity);
+			spawnDust = false;
+		}
+			
 	}
 
 	public void SetDirectionalInput (Vector2 input) {
@@ -155,13 +161,13 @@ public class PlayerComponent : MonoBehaviour
         }
 		else if (controller.collisionsInf.below) {
 			velocity.y = maxJumpVelocity;
-			// REMOVER NO FDS
+
 			animator.SetTrigger ("Jump");
 			jump.Play ();
 			StartCoroutine (JumpDelay("JumpTransition"));
 		}
 	}
-	// REMOVER NO FDS
+
 	public IEnumerator JumpDelay (string trigger, float duration = 0.4f) {
 		yield return new WaitForSeconds (duration);
 		animator.SetTrigger(trigger);
