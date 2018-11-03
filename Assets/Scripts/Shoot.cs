@@ -6,6 +6,8 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
 
 	public GameObject Bullet;
+	public GameObject MoveTrail;
+
 	public float timeOfShots;
 	public AudioSource shotNoise;
 
@@ -23,8 +25,8 @@ public class Shoot : MonoBehaviour {
 		{
 			yield return new WaitForSeconds(timeOfShots);
 			if (fov.visibleTargets.Count > 0) {
-				var obj = Instantiate (Bullet, transform.position + new Vector3 (0, 0.2f, 0), Quaternion.identity);
-
+				var obj = Instantiate (Bullet, transform.position + new Vector3 (0, 0, 0), Quaternion.identity);
+				//obj.GetComponent<MoveTrail> ().bulletControl = dirControl;
 				obj.GetComponent<Bullet> ().enemyControl = dirControl;
 				shotNoise.Play ();
 
@@ -32,4 +34,5 @@ public class Shoot : MonoBehaviour {
 		}
 
 	}
+
 }
