@@ -7,6 +7,14 @@ public class FollowHitBox : MonoBehaviour {
 
 	public Controller2D playerController2D;
 
+	private Color _defaultColor;
+	private SpriteRenderer _spriteRend;
+
+	void Start(){
+		_spriteRend = gameObject.GetComponent<SpriteRenderer>();
+		if(_spriteRend != null) _defaultColor = _spriteRend.color;
+	}
+
 	void Update () 
 	{
 		GetComponent<SpriteRenderer>().flipX = !playerController2D.facingRight;
@@ -16,5 +24,9 @@ public class FollowHitBox : MonoBehaviour {
 		newRotation.z = playerController2D.collisionsInf.slopeAngle;
 
 		transform.rotation = Quaternion.Euler(newRotation);
+	}
+
+	public void Reset(){
+		if(_spriteRend != null) _spriteRend.color = _defaultColor;
 	}
 }
