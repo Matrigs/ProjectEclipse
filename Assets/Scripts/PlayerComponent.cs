@@ -255,9 +255,14 @@ public class PlayerComponent : MonoBehaviour
     }
 
 	public void ChangePushObjectStatus(bool status){
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), 
+			LayerMask.NameToLayer("MovableObstacle"), !status);
+
 		if (pushObjectComponent == null)
 			return;
 
+		//float correctionAmt = 0.05f;
+		//transform.position += (status ? Vector3.right * correctionAmt : Vector3.left  * correctionAmt);
 		pushObjectComponent.activated = status;
 	}
 }

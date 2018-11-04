@@ -10,7 +10,7 @@ public class PushObject : MonoBehaviour {
 	void OnCollisionStay2D(Collision2D col){
 		if (activated && (col.gameObject.layer == LayerMask.NameToLayer ("Hurt") || col.gameObject.layer == LayerMask.NameToLayer ("MovableObstacle"))) {
 			Vector2 dir = col.GetContact (0).point - (Vector2)transform.position; 
-			col.transform.Translate (dir * pushSpeed * Time.deltaTime);
+			col.gameObject.GetComponent<Rigidbody2D>().MovePosition((Vector2)col.transform.position + dir * pushSpeed * Time.deltaTime);
 		}
 	}
 }
