@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour {
 	public GameObject logo;
 	public GameObject mainMenuUI;
 	public GameObject creditsScreenUI;
+	//public GameObject lights;
 	public int fadeDelay = 1;
 	public bool activateCredits = false;
 	public bool activateBackToMain = false;
