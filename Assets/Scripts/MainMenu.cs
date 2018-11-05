@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
 	public Animator fadeAnimator;
+	public Animator buttonAnimator;
 	public GameObject logo;
 	public GameObject mainMenuUI;
 	public GameObject creditsScreenUI;
@@ -16,18 +17,23 @@ public class MainMenu : MonoBehaviour {
 
 	public void Start () {
 		Time.timeScale = 1;
+		//buttonAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
 	}
 
 	public void PlayGame () {
+		StartCoroutine (PlayGameCoroutine ());
+	}
+
+	public IEnumerator PlayGameCoroutine(){
+		yield return new WaitForSeconds (fadeDelay);
 		fadeAnimator.SetTrigger ("FadeOut");
-
-		StartCoroutine (WaitForRealSeconds(fadeDelay));
-
+		yield return new WaitForSeconds (fadeDelay);
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 	}
 
 	public void Credits () {
 		Time.timeScale = 0f;
+		//StartCoroutine (WaitForRealSeconds(fadeDelay));
 		fadeAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
 		fadeAnimator.SetTrigger ("FadeOut");
 
@@ -52,7 +58,10 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	IEnumerator fadeInDelayer () {
-		yield return StartCoroutine (WaitForRealSeconds(fadeDelay));
+		float start = Time.realtimeSinceStartup;
+		while (Time.realtimeSinceStartup < start + fadeDelay) {
+			yield return null;
+		}
 		Time.timeScale = 1f;
 
 		if (activateCredits == true) {
@@ -71,12 +80,5 @@ public class MainMenu : MonoBehaviour {
 			
 		fadeAnimator.SetTrigger ("FadeIn");
 		fadeAnimator.updateMode = AnimatorUpdateMode.Normal;
-	}
-		
-	public static IEnumerator WaitForRealSeconds(float time) {
-		float start = Time.realtimeSinceStartup;
-		while (Time.realtimeSinceStartup < start + time) {
-			yield return null;
-		}
 	}
 }
