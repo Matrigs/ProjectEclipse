@@ -1070,6 +1070,8 @@ MonoBehaviour:
   jump: {fileID: 82944031616489482}
   action: {fileID: 82887228737980248}
   land: {fileID: 82264794244685924}
+  dustParticle: {fileID: 1416349953280928, guid: 0826901e4fbb105459454913dde181bd,
+    type: 2}
   gravity: 0
   maxJumpVelocity: 0
   minJumpVelocity: 0
