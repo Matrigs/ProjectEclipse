@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
-
+public class Bullet : MonoBehaviour
+{
 	public EnemyController enemyControl;
 
 	public float velocity;
 	public GameObject bulletTrail;
 
-	void Start () {
+    void Start () {
 		Effect ();
 	}
 
@@ -27,14 +27,15 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col){
-		if (col.gameObject.tag == "Wall") {
+		if (col.gameObject.tag == "Wall") 
+		{
 			//Destroy (bulletTrail);
 			Destroy (gameObject);
 		}
 	}
 
 	void Effect () {
-		var obj = Instantiate (bulletTrail, transform.position + new Vector3 (0, 0, 0), Quaternion.identity);
-		obj.GetComponent<MoveTrail> ().bulletControl = enemyControl;
+		//var obj = Instantiate (bulletTrail, transform.position + new Vector3 (0, 0, 0), Quaternion.identity);
+		//obj.GetComponent<MoveTrail> ().bulletControl = enemyControl;
 	}
 }
