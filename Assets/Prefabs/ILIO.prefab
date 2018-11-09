@@ -657,7 +657,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
-  pushSpeed: 4
+  pushSpeed: 20
   pushing: {fileID: 82330610293420088}
 --- !u!114 &114490258231722636
 MonoBehaviour:

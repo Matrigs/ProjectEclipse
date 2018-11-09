@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
 	public Animator fadeAnimator;
-	public Animator buttonAnimator;
+	public Animator playAnimator;
+	public Animator creditsAnimator;
+	public Animator quitAnimator;
 	public GameObject logo;
 	public GameObject mainMenuUI;
 	public GameObject creditsScreenUI;
@@ -17,11 +19,15 @@ public class MainMenu : MonoBehaviour {
 
 	public void Start () {
 		Time.timeScale = 1;
-		//buttonAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+		playAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+		creditsAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+		quitAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
 	}
 
 	public void PlayGame () {
+		playAnimator.SetTrigger ("Click");
 		StartCoroutine (PlayGameCoroutine ());
+		playAnimator.SetTrigger ("Normal");
 	}
 
 	public IEnumerator PlayGameCoroutine(){
@@ -32,6 +38,7 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void Credits () {
+		creditsAnimator.SetTrigger ("Click");
 		Time.timeScale = 0f;
 		//StartCoroutine (WaitForRealSeconds(fadeDelay));
 		fadeAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
@@ -43,6 +50,7 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void QuitGame () {
+		quitAnimator.SetTrigger ("Click");
 		Debug.Log ("Quit!");
 		Application.Quit ();
 	}
@@ -80,5 +88,6 @@ public class MainMenu : MonoBehaviour {
 			
 		fadeAnimator.SetTrigger ("FadeIn");
 		fadeAnimator.updateMode = AnimatorUpdateMode.Normal;
+		//fadeAnimator.SetTrigger ("Click");
 	}
 }

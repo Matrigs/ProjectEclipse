@@ -6,7 +6,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
 
 	public GameObject Bullet;
-	public GameObject MoveTrail;
+	//public GameObject MoveTrail;
 
 	public float timeOfShots;
 	public AudioSource shotNoise;

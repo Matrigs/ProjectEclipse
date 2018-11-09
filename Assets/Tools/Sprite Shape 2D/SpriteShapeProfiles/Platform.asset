@@ -36,10 +36,10 @@ MonoBehaviour:
   m_CornerSprites:
   - m_CornerType: 0
     m_Sprites:
-    - {fileID: 21300000, guid: a911d68254008b245800213978bb347f, type: 3}
+    - {fileID: 0}
   - m_CornerType: 1
     m_Sprites:
-    - {fileID: 21300000, guid: bb04882c018980d43acaf6f9d880beaa, type: 3}
+    - {fileID: 0}
   - m_CornerType: 2
     m_Sprites:
     - {fileID: 0}

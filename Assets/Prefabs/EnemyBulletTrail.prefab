@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  enemyControl: {fileID: 114662134530208836, guid: 8adaddfbbbf3b6140bd95049fc445024,
+  bulletControl: {fileID: 114662134530208836, guid: 8adaddfbbbf3b6140bd95049fc445024,
     type: 2}
 --- !u!120 &120773261575078054
 LineRenderer:
