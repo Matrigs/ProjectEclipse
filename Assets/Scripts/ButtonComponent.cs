@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public class ButtonComponent : InteractiveComponent
+public class ButtonComponent : InteractiveComponent, ParticleInterface
 {
     public ReactiveComponent attachedReactionObject;
 	public ReactiveComponent attachedReactionObject2;
@@ -15,6 +15,14 @@ public class ButtonComponent : InteractiveComponent
     private bool ilioPresence, lunaPresence;
     [SerializeField]
     private List<ButtonMaterial> ButtonMaterials = new List<ButtonMaterial>(2);
+
+    public ParticleSystem ThisObjectParticle
+    {
+        get
+        {
+            return this.GetComponent<ParticleSystem>();
+        }
+    }
 
     [System.Serializable]
     public struct ButtonMaterial
@@ -49,6 +57,7 @@ public class ButtonComponent : InteractiveComponent
             Debug.Log("DoorOpen");
             ChangeState();
 			crystal.Play ();
+            ActivateParticle(ThisObjectParticle);
             attachedReactionObject.Reaction();
 			if(attachedReactionObject2 != null) attachedReactionObject2.Reaction();
         }
@@ -100,5 +109,11 @@ public class ButtonComponent : InteractiveComponent
 		if(attachedReactionObject2 != null) Gizmos.DrawSphere(attachedReactionObject2.transform.position, 0.1f);
         //Gizmos.color = Color.white;
         //Gizmos.DrawLine(transform.position, attachedReactionObject.transform.position);
+    }
+
+    public void ActivateParticle(ParticleSystem ObjectParticle)
+    {        
+		Debug.Log("Particle ACTIVE");
+        ObjectParticle.Play();
     }
 }

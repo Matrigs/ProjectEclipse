@@ -51,8 +51,6 @@ public class Life : MonoBehaviour {
 				animator.SetBool ("Death", true);
 
 				StartCoroutine (SpawnDelayer());
-
-
 			}
 		}
 

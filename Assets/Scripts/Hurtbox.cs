@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hurtbox : MonoBehaviour {
+public class Hurtbox : MonoBehaviour, ParticleInterface {
 
 	public TextMesh lifeText;
 	public float recoverTime;
@@ -10,7 +10,15 @@ public class Hurtbox : MonoBehaviour {
 	[SerializeField]
 	protected _state hurtboxState;
 
-	void OnEnable()
+    public ParticleSystem ThisObjectParticle
+    {
+        get
+        {
+            return this.GetComponent<ParticleSystem>();
+        }
+    }
+
+    void OnEnable()
 	{
 		ChangeHPText();
 	}
@@ -74,7 +82,13 @@ public class Hurtbox : MonoBehaviour {
 		}
 	}
 
-	public enum _state
+    public void ActivateParticle(ParticleSystem ObjectParticle)
+    {
+        Debug.Log("Particle ACTIVE");
+		if(ObjectParticle != null) ObjectParticle.Play();
+    }
+
+    public enum _state
 	{
 		Open,
 		Closed
