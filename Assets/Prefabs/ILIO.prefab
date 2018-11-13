@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95014933450777274}
   debug: 0
-  maxJumpHeight: 3
+  maxJumpHeight: 2.5
   minJumpHeight: 1.5
   timeToJumpApex: 0.4
   fallMultipler: 1.5

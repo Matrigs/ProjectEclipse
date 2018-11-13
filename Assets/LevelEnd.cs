@@ -8,6 +8,7 @@ public class LevelEnd : MonoBehaviour {
     public Transform NextLevelSpawnPoint;
 	public Animator fadeAnimator;
 	public int fadeDelay = 2;
+	public Camera main;
 
     private List<GameObject> _playersOnTrigger =  new List<GameObject>();
 
@@ -54,6 +55,10 @@ public class LevelEnd : MonoBehaviour {
 			foreach (GameObject go in _playersOnTrigger)
 			{
 				go.transform.position = NextLevelSpawnPoint.position; // Teleport players to the Spawn point of the NextLevel
+				Camera.main.transform.position = NextLevelSpawnPoint.position;
+				//Camera.main.GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 10;
+				//Camera.main.GetComponent<Cinemachine.CinemachineVirtualCamera>().MoveToTopOfPrioritySubqueue();
+				Debug.Log ("Camera position changed");
 			}
 			_playersOnTrigger.Clear();
 		} 

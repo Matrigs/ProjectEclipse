@@ -141,8 +141,15 @@ public class PlayerComponent : MonoBehaviour
 		lastY = transform.position.y;
 
 		if (spawnDust == true) {
-			Instantiate (dustParticle, transform.position, Quaternion.identity);
+			//particleTime
+			GameObject dust = Instantiate (dustParticle, transform.position, transform.rotation) as GameObject;
+			ParticleSystem parts = dust.GetComponent<ParticleSystem> ();
+
+			//Rever depois pra não ficar tão cagado
+			float totalDuration = parts.main.duration * 10;
+			Destroy (dust, totalDuration);
 			spawnDust = false;
+
 		}
 			
 	}
