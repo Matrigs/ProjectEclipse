@@ -37,7 +37,7 @@ public class InputController : MonoBehaviour
 	}
 	void Update()
 	{		
-		if(!canInput) return;
+		if(!canInput || PauseMenu.GameIsPaused) return;
 
 		if(InputManager.Devices.Count >= playerNumber)
 		{
