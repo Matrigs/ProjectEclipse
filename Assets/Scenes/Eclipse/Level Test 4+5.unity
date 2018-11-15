@@ -16888,6 +16888,11 @@ Prefab:
       propertyPath: ThisCamera
       value: 
       objectReference: {fileID: 1999095345}
+    - target: {fileID: 114790807877155124, guid: 5b517c86a5644424bae19deef5a16461,
+        type: 2}
+      propertyPath: fadeDelay
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b517c86a5644424bae19deef5a16461, type: 2}
   m_IsPrefabAsset: 0
