@@ -35,7 +35,7 @@ public class Hurtbox : MonoBehaviour, ParticleInterface {
 		}
 		if(HP <= 0)
 		{
-			Destroy(this.gameObject);
+			this.gameObject.SetActive(false);
 		}
 	}
 	void OnCollisionEnter2D (Collision2D info) {
@@ -46,8 +46,8 @@ public class Hurtbox : MonoBehaviour, ParticleInterface {
 
 			//Se foi, dá dano
 			else{
-				Destroy (this.gameObject);
-				Destroy (info.gameObject);
+				this.gameObject.SetActive(false);
+				info.gameObject.SetActive(false);
 			}
 		}
 			
