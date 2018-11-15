@@ -13,6 +13,15 @@ public class GameMaster : MonoBehaviour {
 
 	public Vector3 spawnPosition {get {return checkpoints[checkpoints.Count - 1].position;}}
 
+	public float maxDistanceBetweenPlayers = 10f;
+	private float curDistanceBetweenPlayers;
+
+	//Last checkpoint info
+	public Dictionary<PushObject, Vector3> blockPosition = new Dictionary<PushObject, Vector3>();
+	public Dictionary<ButtonComponent, bool> switchStatus = new Dictionary<ButtonComponent, bool>();
+	public Dictionary<DoorComponent, bool> doorStatus = new Dictionary<DoorComponent, bool>();
+	public Dictionary<EnemyController, Vector3> enemyPosition = new Dictionary<EnemyController, Vector3>();
+
 	void Start () {
 		if (gm == null) {
 			gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster>();
