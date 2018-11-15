@@ -9,6 +9,8 @@ public class Hurtbox : MonoBehaviour, ParticleInterface {
 	public int HP;
 	[SerializeField]
 	protected _state hurtboxState;
+	private int _initialHP;
+
 
     public ParticleSystem ThisObjectParticle
     {
@@ -18,11 +20,14 @@ public class Hurtbox : MonoBehaviour, ParticleInterface {
         }
     }
 
+	void Awake(){
+		_initialHP = HP;
+	}
+
     void OnEnable()
 	{
 		ChangeHPText();
 	}
-
 	public virtual void TakeDamage(int Damage, PlayerComponent.PlayerCharacter character)
 	{
 		if(hurtboxState == _state.Open)	
@@ -53,6 +58,10 @@ public class Hurtbox : MonoBehaviour, ParticleInterface {
 			
 	}
 
+	public void Reset(){
+		HP = _initialHP;
+		StartCoroutine(Recover(0));
+	}
 
 	protected IEnumerator Recover(float time)
 	{

@@ -12,27 +12,41 @@ public class GameMaster : MonoBehaviour {
 	public List <Transform> checkpoints = new List<Transform> ();
 
 	public Vector3 spawnPosition {get {return checkpoints[checkpoints.Count - 1].position;}}
+	public Checkpoint curCheckpoint {get {return checkpoints[checkpoints.Count - 1].GetComponent<Checkpoint>();}}
 
 	public float maxDistanceBetweenPlayers = 10f;
 	private float curDistanceBetweenPlayers;
 
-	//Last checkpoint info
-	public Dictionary<PushObject, Vector3> blockPosition = new Dictionary<PushObject, Vector3>();
-	public Dictionary<ButtonComponent, bool> switchStatus = new Dictionary<ButtonComponent, bool>();
-	public Dictionary<DoorComponent, bool> doorStatus = new Dictionary<DoorComponent, bool>();
-	public Dictionary<EnemyController, Vector3> enemyPosition = new Dictionary<EnemyController, Vector3>();
+	//Objetos que os checkpoints guardarão informações sobre
+	[HideInInspector] public List<DoorComponent> doors;
+	[HideInInspector] public List<ButtonComponent> buttons;
+	[HideInInspector] public List<EnemyController> enemies;
+	[HideInInspector] public List<Block> blocks;
 
-	void Start () {
+	[HideInInspector] public GameState state;
+
+	void Awake () {
 		if (gm == null) {
 			gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster>();
 			checkpoints.Add(spawnPoint);
 		}
+
+		doors = new List<DoorComponent>();
+		buttons = new List<ButtonComponent>();
+		enemies = new List<EnemyController>();
+		blocks = new List<Block>();
+	}
+
+	void Start(){
+		state = new GameState();
 	}
 
 	//public int spawnDelay = 2;
 
 	public void RespawnPlayer () {
 		//yield return new WaitForSeconds (spawnDelay);
+
+		state.RestoreState();
 
 		playerPrefabIlio.transform.position = spawnPosition + Vector3.left;
 		playerPrefabLuna.transform.position = spawnPosition + Vector3.right;

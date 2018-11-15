@@ -30,7 +30,7 @@ public class LookAhead : MonoBehaviour {
 		if(Targets[leftMostIdx].position.x < _targetsCurPos[leftMostIdx].x) moveLeft = true;
 		if(Targets[rightMostIdx].position.x > _targetsCurPos[rightMostIdx].x) moveRight = true;
 
-		Debug.Log(moveLeft + "," + moveRight);
+		//Debug.Log(moveLeft + "," + moveRight);
 
 		//move o look ahead apenas se só uma das variáveis é verdadeira
 		if((!moveLeft && !moveRight) || (moveLeft && moveRight)) return;

@@ -14,9 +14,10 @@ public class Shoot : MonoBehaviour {
 	public Animator enemyAnimator;
 	public EnemyController dirControl;
 
-	void Start () 
+	void OnEnable () 
 	{
 		StartCoroutine(ShootRoutine());
+		Debug.Log("A");
 	}
 	private IEnumerator ShootRoutine()
 	{
