@@ -217,7 +217,8 @@ public class PlayerComponent : MonoBehaviour
 		action.Play ();
 
 		if(ActionButton != null) ActionButton();
-		StartCoroutine(DoMeleeAttack(activeAttackTime));
+		if(character != PlayerCharacter.Ilio) StartCoroutine(DoMeleeAttack(activeAttackTime));
+		else meleeAtt.startCheckingCollision();
 		animator.SetBool ("Action", true);
 		animator.SetBool ("ShieldPlatform", false);
 		if (character == PlayerCharacter.Ilio) {
@@ -227,6 +228,7 @@ public class PlayerComponent : MonoBehaviour
 		}
     }
 	public void OnActionUp(){
+		if(character == PlayerCharacter.Ilio) meleeAtt.stopCheckingCollision();
 		animator.SetBool ("Action", false);
 		animator.SetBool ("ShieldPlatform", false);
 		if (IlioActionButtonPressed)
@@ -250,10 +252,12 @@ public class PlayerComponent : MonoBehaviour
     public void IlioAction(bool status)
     {
 		if (character == PlayerCharacter.Ilio) {
+			if(status) meleeAtt.stopCheckingCollision();
 			shieldPlatform.SetActive (status);
 			animator.SetBool ("ShieldPlatform", status);
 			if (IlioActionButtonPressed) {
 				ChangePushObjectStatus (!status);
+				if(!status) meleeAtt.startCheckingCollision();
 			} else {
 				ChangePushObjectStatus (false);
 				animator.SetBool ("ShieldPlatform", false);
