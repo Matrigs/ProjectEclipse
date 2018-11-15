@@ -12,7 +12,7 @@ public class InputController : MonoBehaviour
 	public int playerNumber;
 	public bool isis = false;
 
-	public bool canInput = true;
+	public static bool canInput = true;
 	InputDevice device;	
 
 	private bool _controls;
