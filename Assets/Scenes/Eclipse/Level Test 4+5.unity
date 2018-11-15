@@ -13385,11 +13385,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4548517220070642, guid: 9878a6415699ca74a84e360a18715f67,
     type: 2}
   m_PrefabInternal: {fileID: 1994100460}
---- !u!60 &278183784 stripped
-PolygonCollider2D:
-  m_CorrespondingSourceObject: {fileID: 60035384981708580, guid: 9878a6415699ca74a84e360a18715f67,
-    type: 2}
-  m_PrefabInternal: {fileID: 1994100460}
 --- !u!1001 &279279254
 Prefab:
   m_ObjectHideFlags: 0
@@ -22416,7 +22411,7 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 645895119}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -22463,7 +22458,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 649432352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.309998, y: 0.020000458, z: 0}
+  m_LocalPosition: {x: -41.61441, y: -0.1243999, z: -9.735025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 166819139}
@@ -22483,7 +22478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ConfineMode: 0
   m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 844986150}
+  m_BoundingShape2D: {fileID: 1113939486}
   m_ConfineScreenEdges: 1
   m_Damping: 0
 --- !u!114 &649432355
@@ -24190,7 +24185,13 @@ Prefab:
       propertyPath: m_Name
       value: Background (Second)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 60035384981708580, guid: 9878a6415699ca74a84e360a18715f67,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 60035384981708580, guid: 9878a6415699ca74a84e360a18715f67, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 9878a6415699ca74a84e360a18715f67, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &779612161
@@ -25390,11 +25391,6 @@ SpriteRenderer:
 --- !u!4 &844986149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4548517220070642, guid: 9878a6415699ca74a84e360a18715f67,
-    type: 2}
-  m_PrefabInternal: {fileID: 771808667}
---- !u!60 &844986150 stripped
-PolygonCollider2D:
-  m_CorrespondingSourceObject: {fileID: 60035384981708580, guid: 9878a6415699ca74a84e360a18715f67,
     type: 2}
   m_PrefabInternal: {fileID: 771808667}
 --- !u!1 &855317713
@@ -28326,7 +28322,7 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1113939484}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -28344,11 +28340,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -54.462223, y: 32.223568}
-      - {x: -54.40325, y: -8.041465}
-      - {x: 22.937925, y: -8.232666}
+    - - {x: 19.230877, y: 17.025276}
+      - {x: 18.914232, y: 5.7833033}
+      - {x: 19.000244, y: -8.041465}
+      - {x: 55.83159, y: -8.232666}
       - {x: 107.49032, y: -8.39917}
-      - {x: 107.42067, y: 32.025368}
+      - {x: 107.42067, y: 17.757576}
 --- !u!1001 &1125723174
 Prefab:
   m_ObjectHideFlags: 0
@@ -42512,8 +42509,8 @@ PolygonCollider2D:
     - - {x: -54.184143, y: 13.607618}
       - {x: -54.125175, y: -15.543414}
       - {x: -1.8681705, y: -15.710818}
-      - {x: 55.17195, y: -15.659694}
-      - {x: 55.586746, y: 13.63204}
+      - {x: 40.28423, y: -15.659694}
+      - {x: 40.176655, y: 14.153901}
 --- !u!1001 &1797765523
 Prefab:
   m_ObjectHideFlags: 0
@@ -44694,6 +44691,11 @@ Prefab:
       propertyPath: m_Name
       value: Background (Second)
       objectReference: {fileID: 0}
+    - target: {fileID: 60035384981708580, guid: 9878a6415699ca74a84e360a18715f67,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9878a6415699ca74a84e360a18715f67, type: 2}
   m_IsPrefabAsset: 0
@@ -44741,7 +44743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ConfineMode: 0
   m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 278183784}
+  m_BoundingShape2D: {fileID: 645895121}
   m_ConfineScreenEdges: 1
   m_Damping: 0
 --- !u!114 &1996485637
