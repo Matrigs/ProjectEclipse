@@ -38,6 +38,8 @@ public class ButtonComponent : InteractiveComponent, ParticleInterface
     
     private void Start()
     {
+        GameMaster.gm.buttons.Add(this);
+
         PlayerComponent.LunaInstance.ActionButton += LunaAction;
     }
     private void OnDisable()
@@ -62,7 +64,7 @@ public class ButtonComponent : InteractiveComponent, ParticleInterface
 			if(attachedReactionObject2 != null) attachedReactionObject2.Reaction();
         }
     }
-    void ChangeState()
+    public void ChangeState()
     {
         if(currentState == buttonState.active)
         {

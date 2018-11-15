@@ -50,6 +50,7 @@ public class Life : MonoBehaviour {
 				animator.updateMode = AnimatorUpdateMode.UnscaledTime;
 				animator.SetBool ("Death", true);
 
+				Debug.Log("Spawn delayer");
 				StartCoroutine (SpawnDelayer());
 			}
 		}
@@ -82,8 +83,8 @@ public class Life : MonoBehaviour {
 		animator.updateMode = AnimatorUpdateMode.Normal;
 
 		//reset color
-		GameMaster.gm.playerPrefabIlio.transform.Find("PlayerHitBox").GetComponent<FollowHitBox>().Reset();
-		GameMaster.gm.playerPrefabLuna.transform.Find("PlayerHitBox").GetComponent<FollowHitBox>().Reset();
+		//GameMaster.gm.playerPrefabIlio.transform.Find("PlayerHitBox").GetComponent<FollowHitBox>().Reset();
+		//GameMaster.gm.playerPrefabLuna.transform.Find("PlayerHitBox").GetComponent<FollowHitBox>().Reset();
 	}
 
 	public static IEnumerator WaitForRealSeconds(float time) {

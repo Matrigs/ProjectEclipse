@@ -8,6 +8,12 @@ public class DoorComponent : ReactiveComponent
     public bool doorOpen = false;
 	public ParticleSystem doorParticle;
     public Color openColor;
+    private Color defaultColor;
+
+    public void Start(){
+        GameMaster.gm.doors.Add(this);
+        defaultColor = GetComponent<SpriteRenderer>().color;
+    }
 
     private void OnEnable()
     {
@@ -17,10 +23,23 @@ public class DoorComponent : ReactiveComponent
     public override void Reaction()
     {
         //base.Reaction();
-        doorOpen = true;
-        Debug.Log("Aaaaaaaan OPEEEENNN");
-        GetComponent<SpriteRenderer>().color = openColor;
-		doorParticle.Stop();
-        GetComponent<Collider2D>().enabled = false;
+        SetOpen(true);
+    }
+
+    public void SetOpen(bool isOpen){
+        doorOpen = isOpen;
+
+        if(doorOpen){
+            Debug.Log("Aaaaaaaan OPEEEENNN");
+            GetComponent<SpriteRenderer>().color = openColor;
+            doorParticle.Stop();
+            GetComponent<Collider2D>().enabled = false;
+        }
+
+        else{
+            GetComponent<SpriteRenderer>().color = defaultColor;
+            doorParticle.Play();
+            GetComponent<Collider2D>().enabled = true;
+        }
     }
 }

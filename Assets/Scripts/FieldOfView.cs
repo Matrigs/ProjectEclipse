@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FieldOfView : MonoBehaviour {
+	public bool invertDir;
 
     [Range(0,20)]
     public float viewRadius;
@@ -33,7 +34,7 @@ public class FieldOfView : MonoBehaviour {
 	}
 
 	private void RecalculateVisionDir(){
-		visionDir = GetComponent<SpriteRenderer>().flipX ? Vector3.left : Vector3.right;
+		visionDir = invertDir ? Vector3.left : Vector3.right;
 	}
 
     private void OnEnable()
@@ -235,7 +236,7 @@ public class FieldOfView : MonoBehaviour {
 
 	public void OnDrawGizmos(){
 		Gizmos.color = Color.yellow;
-		Gizmos.DrawLine(transform.position, transform.position + DirFromAngle(-viewAngle/2, false) * viewRadius);
-		Gizmos.DrawLine(transform.position, transform.position + DirFromAngle(viewAngle/2, false) * viewRadius);
+		Gizmos.DrawLine(transform.position, transform.position + ((visionDir == Vector3.right) ?  DirFromAngle(-viewAngle/2, false) : DirFromAngle(-viewAngle/2 + 180, false)) * viewRadius);
+		Gizmos.DrawLine(transform.position, transform.position + ((visionDir == Vector3.right) ?  DirFromAngle(viewAngle/2, false) : DirFromAngle(viewAngle/2 + 180, false)) * viewRadius);
 	}
 }
