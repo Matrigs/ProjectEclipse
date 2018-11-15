@@ -48,7 +48,6 @@ public class LevelEnd : MonoBehaviour {
 		yield return StartCoroutine (WaitForRealSeconds(fadeDelay/2));
 		Time.timeScale = 1f;
 
-
 		if (!NextLevel.activeInHierarchy) // If the next level is turned off
 		{
 			NextLevel.SetActive(true); //Turn it on
