@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class Checkpoint : MonoBehaviour {
 	public AudioSource check1;
 	public AudioSource check2;
 	public AudioSource check3;
+
 
 	// Use this for initialization
 	void Start () {
@@ -42,10 +44,11 @@ public class Checkpoint : MonoBehaviour {
 			check2.Play ();
 			check3.Play ();
 			GameMaster.gm.checkpoints.Add(transform);
+			GameMaster.gm.state = new GameState();
 		}
 	}
 
-	bool IsThisTheLastCheckpoint(){
+    bool IsThisTheLastCheckpoint(){
 		return GameMaster.gm.checkpoints[GameMaster.gm.checkpoints.Count - 1] == transform;
 	}
 }

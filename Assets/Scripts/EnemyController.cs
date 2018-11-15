@@ -8,9 +8,10 @@ public class EnemyController : MonoBehaviour {
 	public bool facingRight;
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+
+    public void Start(){
+        GameMaster.gm.enemies.Add(this);
+    }
 	
 	// Update is called once per frame
 	void Update () {
