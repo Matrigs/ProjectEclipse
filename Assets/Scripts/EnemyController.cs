@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 
 	public Transform HitBox;
-	public bool facingRight;
+	public FieldOfView fov;
+	public bool facingRight {get{ return !fov.invertDir;} set{ fov.invertDir = !value; }}
 
 	// Use this for initialization
 	void Start () {
