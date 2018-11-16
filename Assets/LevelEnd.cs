@@ -45,10 +45,9 @@ public class LevelEnd : MonoBehaviour {
     }
 
 	IEnumerator fadeInDelayer () {
-		yield return StartCoroutine (WaitForRealSeconds(fadeDelay));
+		yield return StartCoroutine (WaitForRealSeconds(fadeDelay/2));
 		Time.timeScale = 1f;
 
-		transform.parent.gameObject.SetActive(false); // Turn off the whole current Level
 		if (!NextLevel.activeInHierarchy) // If the next level is turned off
 		{
 			NextLevel.SetActive(true); //Turn it on
@@ -62,6 +61,9 @@ public class LevelEnd : MonoBehaviour {
 			}
 			_playersOnTrigger.Clear();
 		} 
+
+		yield return StartCoroutine (WaitForRealSeconds(fadeDelay/2));
+		transform.parent.gameObject.SetActive(false); // Turn off the whole current Level
 
 		fadeAnimator.SetTrigger ("FadeIn");
 		fadeAnimator.updateMode = AnimatorUpdateMode.Normal;

@@ -2189,12 +2189,21 @@ MonoBehaviour:
   moveSpeed: 6
   meleeAtt: {fileID: 0}
   activeAttackTime: 0.5
+  walk: {fileID: 0}
+  jump: {fileID: 0}
+  action: {fileID: 0}
+  land: {fileID: 0}
+  dustParticle: {fileID: 0}
   gravity: 0
   maxJumpVelocity: 0
   minJumpVelocity: 0
   velocityXSmoothing: 0
   velocity: {x: 0, y: 0, z: 0}
   spawnPoint: {fileID: 0}
+  character: 0
+  shieldPlatform: {fileID: 0}
+  IlioActionButtonPressed: 0
+  charname: 
 --- !u!114 &114767943829308010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2334,6 +2343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbf4c977acf2aa40b0ca09390ee02d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  spawnDelay: 2
 --- !u!114 &114869510401948666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2395,6 +2406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   isis: 1
+  canInput: 1
   pKeys:
     axis: 
     jumpKey: 

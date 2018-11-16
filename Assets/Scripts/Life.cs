@@ -68,6 +68,7 @@ public class Life : MonoBehaviour {
 	}
 
 	IEnumerator SpawnDelayer () {
+		InputController.canInput = false;
 		yield return StartCoroutine (WaitForRealSeconds(spawnDelay));
 		Time.timeScale = 1f;
 
@@ -85,6 +86,7 @@ public class Life : MonoBehaviour {
 		//reset color
 		//GameMaster.gm.playerPrefabIlio.transform.Find("PlayerHitBox").GetComponent<FollowHitBox>().Reset();
 		//GameMaster.gm.playerPrefabLuna.transform.Find("PlayerHitBox").GetComponent<FollowHitBox>().Reset();
+		InputController.canInput = true;
 	}
 
 	public static IEnumerator WaitForRealSeconds(float time) {

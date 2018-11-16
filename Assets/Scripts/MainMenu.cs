@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour {
 	public int fadeDelay = 1;
 	public bool activateCredits = false;
 	public bool activateBackToMain = false;
+	public bool alreadyPlayed = false;
 
 	public void Start () {
 		Time.timeScale = 1;

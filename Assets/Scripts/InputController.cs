@@ -12,7 +12,7 @@ public class InputController : MonoBehaviour
 	public int playerNumber;
 	public bool isis = false;
 
-	public bool canInput = true;
+	public static bool canInput = true;
 	InputDevice device;	
 
 	private bool _controls;
@@ -37,7 +37,7 @@ public class InputController : MonoBehaviour
 	}
 	void Update()
 	{		
-		if(!canInput) return;
+		if(!canInput || PauseMenu.GameIsPaused) return;
 
 		if(InputManager.Devices.Count >= playerNumber)
 		{
