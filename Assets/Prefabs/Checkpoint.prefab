@@ -120,7 +120,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1013580952952416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.96, y: 2.05, z: 0}
+  m_LocalPosition: {x: 39.55, y: 0.03699994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224821764329376912}
@@ -659,9 +659,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emblem: {fileID: 1506552771951170}
-  check1: {fileID: 82954799608489770}
-  check2: {fileID: 82561313383591142}
-  check3: {fileID: 82619861695274026}
+  check1: {fileID: 0}
+  check2: {fileID: 0}
+  check3: {fileID: 0}
 --- !u!198 &198745907889293644
 ParticleSystem:
   m_ObjectHideFlags: 1
