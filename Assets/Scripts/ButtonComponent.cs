@@ -8,7 +8,7 @@ public class ButtonComponent : InteractiveComponent, ParticleInterface
     public ReactiveComponent attachedReactionObject;
 	public ReactiveComponent attachedReactionObject2;
     public buttonState currentState = buttonState.active;
-
+	public GameObject diamond;
 	public AudioSource crystal;
 
     [SerializeField]
@@ -58,6 +58,7 @@ public class ButtonComponent : InteractiveComponent, ParticleInterface
         {
             Debug.Log("DoorOpen");
             ChangeState();
+			diamond.SetActive (false);
 			crystal.Play ();
             ActivateParticle(ThisObjectParticle);
             attachedReactionObject.Reaction();
