@@ -142,7 +142,7 @@ public class PlayerComponent : MonoBehaviour
 
 		if (spawnDust == true) {
 			//particleTime
-			GameObject dust = Instantiate (dustParticle, transform.position, transform.rotation) as GameObject;
+			GameObject dust = Instantiate (dustParticle, transform.position, transform.rotation * Quaternion.Euler(-90,0,0)) as GameObject;
 			ParticleSystem parts = dust.GetComponent<ParticleSystem> ();
 
 			//Rever depois pra não ficar tão cagado

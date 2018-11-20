@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 198014241630966026}
   - component: {fileID: 199941375964391372}
   m_Layer: 8
-  m_Name: Dust
+  m_Name: DustRock
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1913273498472460}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -43.56, y: 3.71, z: -0}
+  m_LocalPosition: {x: -40.353607, y: 1.6838624, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4819300527551184}
@@ -701,7 +701,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: -1, z: 0}
+    m_Position: {x: 0, y: -1, z: -1}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 0.88, y: 0.5, z: 0.33}
     placementMode: 0
@@ -4678,7 +4678,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1526777305427950}
   serializedVersion: 5
-  lengthInSec: 0.65
+  lengthInSec: 0.25
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -5300,7 +5300,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0}
+    m_Position: {x: 0, y: -1, z: 6}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
