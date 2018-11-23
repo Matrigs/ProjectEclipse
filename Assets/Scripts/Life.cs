@@ -6,6 +6,7 @@ public class Life : MonoBehaviour {
 
 	public Animator animator;
 	public int spawnDelay = 2;
+	public PlayerComponent playerComp;
 
 	/*
 	[System.Serializable]
@@ -52,6 +53,7 @@ public class Life : MonoBehaviour {
 
 				Debug.Log("Spawn delayer");
 				StartCoroutine (SpawnDelayer());
+				playerComp.moveSpeed = playerComp.originSpeed;
 			}
 		}
 
@@ -64,6 +66,7 @@ public class Life : MonoBehaviour {
 			animator.SetBool ("Death", true);
 
 			StartCoroutine (SpawnDelayer());
+			playerComp.moveSpeed = playerComp.originSpeed;
 		}
 	}
 

@@ -32,6 +32,8 @@ public class PlayerComponent : MonoBehaviour
 	public float accelerationTimeAirborne = .2f;	
 	public float accelerationTimeGrounded = .1f;
 	[Range(0.1f,50f)]
+	public float originSpeed = 4;
+	[Range(0.1f,50f)]
 	public float moveSpeed = 6;
 	[Header("MELEE ATTACK")]
 	public MeleeAttack meleeAtt;

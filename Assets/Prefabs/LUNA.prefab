@@ -819,6 +819,7 @@ MonoBehaviour:
   fallMultipler: 1
   accelerationTimeAirborne: 0.1
   accelerationTimeGrounded: 0
+  originSpeed: 5
   moveSpeed: 5
   meleeAtt: {fileID: 114337635206782256}
   activeAttackTime: 0.32
@@ -826,7 +827,7 @@ MonoBehaviour:
   jump: {fileID: 82103774138176938}
   action: {fileID: 82423092319556854}
   land: {fileID: 82431777415416202}
-  dustParticle: {fileID: 1416349953280928, guid: 0826901e4fbb105459454913dde181bd,
+  dustParticle: {fileID: 1913273498472460, guid: c8f664c57c9bcc74ca280bacdcc72250,
     type: 2}
   gravity: -14.8148155
   maxJumpVelocity: 6.666667
@@ -867,6 +868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95691320611165884}
   spawnDelay: 2
+  playerComp: {fileID: 114735424271779676}
 --- !u!114 &114973012021335094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -916,9 +918,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1526826353
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: aabee5c94ae6fb0409a0c877d437e50e, type: 3}
   m_Color: {r: 0, g: 0.32941177, b: 0.56078434, a: 1}
   m_FlipX: 1
