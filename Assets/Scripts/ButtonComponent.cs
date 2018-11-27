@@ -33,12 +33,21 @@ public class ButtonComponent : InteractiveComponent, ParticleInterface
     public enum buttonState {active, inactive}
 
     private void OnEnable(){
-        if(PlayerComponent.IlioInstance != null) Start();
+		if(PlayerComponent.IlioInstance != null) StartCoroutine(DelayStart());
     }
+
+	public IEnumerator DelayStart(){
+		while (GameMaster.gm == null || GameMaster.gm.buttons == null) {
+			Debug.Log (GameMaster.gm);
+			yield return new WaitForEndOfFrame ();
+		}
+
+		Start ();
+	}
     
     private void Start()
     {
-        GameMaster.gm.buttons.Add(this);
+		if(!GameMaster.gm.buttons.Contains(this)) GameMaster.gm.buttons.Add(this);
 
         PlayerComponent.LunaInstance.ActionButton += LunaAction;
     }
@@ -81,7 +90,8 @@ public class ButtonComponent : InteractiveComponent, ParticleInterface
             {
                 if(GetComponent<MeshRenderer>()) GetComponent<MeshRenderer>().material = bmat.material;
             }
-        }
+		}
+		transform.Find ("Cristal").gameObject.SetActive (currentState == buttonState.active);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

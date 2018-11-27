@@ -27,7 +27,7 @@ public class GameMaster : MonoBehaviour {
 
 	void Awake () {
 		if (gm == null) {
-			gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster>();
+			gm = this; //GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster>();
 			checkpoints.Add(spawnPoint);
 		}
 

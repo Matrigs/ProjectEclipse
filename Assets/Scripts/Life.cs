@@ -70,7 +70,7 @@ public class Life : MonoBehaviour {
 		}
 	}
 
-	IEnumerator SpawnDelayer () {
+	public IEnumerator SpawnDelayer () {
 		InputController.canInput = false;
 		yield return StartCoroutine (WaitForRealSeconds(spawnDelay));
 		Time.timeScale = 1f;
