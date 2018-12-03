@@ -11,6 +11,7 @@ public class Hurtbox : MonoBehaviour, ParticleInterface {
 	protected _state hurtboxState;
 	private int _initialHP;
 
+	public GameObject enemyParts;
 
     public ParticleSystem ThisObjectParticle
     {
@@ -41,6 +42,12 @@ public class Hurtbox : MonoBehaviour, ParticleInterface {
 		if(HP <= 0)
 		{
 			this.gameObject.SetActive(false);
+			Instantiate (enemyParts, transform.position, transform.rotation * Quaternion.Euler(-180,0,0));
+			ParticleSystem parts = enemyParts.GetComponent<ParticleSystem> ();
+
+			//Rever depois pra não ficar tão cagado
+			float totalDuration = parts.main.duration * 10;
+			Destroy (enemyParts, totalDuration);
 		}
 	}
 	void OnCollisionEnter2D (Collision2D info) {

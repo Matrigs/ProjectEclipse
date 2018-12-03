@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public class ButtonComponent : InteractiveComponent, ParticleInterface
+public class ButtonComponent : InteractiveComponent
 {
     public ReactiveComponent attachedReactionObject;
 	public ReactiveComponent attachedReactionObject2;
     public buttonState currentState = buttonState.active;
 	public GameObject diamond;
+	public GameObject buttonParts;
 	public AudioSource crystal;
 
     [SerializeField]
@@ -69,7 +70,15 @@ public class ButtonComponent : InteractiveComponent, ParticleInterface
             ChangeState();
 			diamond.SetActive (false);
 			crystal.Play ();
-            ActivateParticle(ThisObjectParticle);
+
+            //ActivateParticle(ThisObjectParticle);
+			Instantiate (buttonParts, diamond.transform.position, transform.rotation * Quaternion.Euler(-180,0,0));
+			ParticleSystem parts = buttonParts.GetComponent<ParticleSystem> ();
+
+			//Rever depois pra não ficar tão cagado
+			float totalDuration = parts.main.duration * 10;
+			Destroy (buttonParts, totalDuration);
+
             attachedReactionObject.Reaction();
 			if(attachedReactionObject2 != null) attachedReactionObject2.Reaction();
         }

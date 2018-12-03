@@ -159,7 +159,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1658896238780636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.67, y: 4.339, z: -0.01}
+  m_LocalPosition: {x: -36.68, y: 1.724, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4532781622849016}
@@ -351,6 +351,8 @@ MonoBehaviour:
   attachedReactionObject2: {fileID: 0}
   currentState: 0
   diamond: {fileID: 1814375952147144}
+  buttonParts: {fileID: 1599978638500408, guid: 441c4a5247e22eb47aee8b9854fd9543,
+    type: 2}
   crystal: {fileID: 82540832474845306}
   ilioPresence: 0
   lunaPresence: 0

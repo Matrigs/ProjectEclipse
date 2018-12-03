@@ -6,13 +6,16 @@ using UnityEngine;
 public class DoorComponent : ReactiveComponent
 {
     public bool doorOpen = false;
-	public ParticleSystem doorParticle;
+	public GameObject doorParts;
+	//public ParticleSystem doorParticle;
+	ParticleSystem doorParticle;
     public Color openColor;
     private Color defaultColor;
 
     public void Start(){
         GameMaster.gm.doors.Add(this);
         defaultColor = GetComponent<SpriteRenderer>().color;
+		doorParticle = doorParts.GetComponent<ParticleSystem> ();
     }
 
     private void OnEnable()

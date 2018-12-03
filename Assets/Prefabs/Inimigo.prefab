@@ -222,7 +222,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206280056077040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32, y: 1.92, z: 0}
+  m_LocalPosition: {x: -28.44, y: 1.92, z: 0}
   m_LocalScale: {x: 0.403554, y: 0.403554, z: 0.403554}
   m_Children:
   - {fileID: 4738237803372238}
@@ -519,6 +519,7 @@ MonoBehaviour:
   recoverTime: 2
   HP: 20
   hurtboxState: 0
+  enemyParts: {fileID: 1611993093830406, guid: 883fb4f5dc8e80648b1ddd58d415594f, type: 2}
 --- !u!114 &114934426336336288
 MonoBehaviour:
   m_ObjectHideFlags: 1
