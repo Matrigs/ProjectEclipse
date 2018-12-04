@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Eclipse/Four Rooms DEMO.unity
     guid: 67368c3d60b4a01469dba0b9b61a90c3
+  - enabled: 1
+    path: Assets/Scenes/Eclipse/Credits.unity
+    guid: c92ba2e5a7743174ea9770c495dab58e
   m_configObjects: {}

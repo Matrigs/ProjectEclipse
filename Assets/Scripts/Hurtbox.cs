@@ -59,6 +59,14 @@ public class Hurtbox : MonoBehaviour, ParticleInterface {
 			//Se foi, dá dano
 			else{
 				this.gameObject.SetActive(false);
+
+				Instantiate (enemyParts, transform.position, transform.rotation * Quaternion.Euler(-180,0,0));
+				ParticleSystem parts = enemyParts.GetComponent<ParticleSystem> ();
+
+				//Rever depois pra não ficar tão cagado
+				float totalDuration = parts.main.duration * 10;
+				Destroy (enemyParts, totalDuration);
+
 				info.gameObject.SetActive(false);
 			}
 		}

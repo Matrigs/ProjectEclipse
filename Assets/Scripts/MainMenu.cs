@@ -12,9 +12,11 @@ public class MainMenu : MonoBehaviour {
 	public GameObject logo;
 	public GameObject mainMenuUI;
 	public GameObject creditsScreenUI;
+	public GameObject credits2UI;
 	//public GameObject lights;
 	public int fadeDelay = 1;
 	public bool activateCredits = false;
+	public bool creditsPart2 = false;
 	public bool activateBackToMain = false;
 	public bool alreadyPlayed = false;
 
@@ -43,7 +45,7 @@ public class MainMenu : MonoBehaviour {
 		Time.timeScale = 0f;
 		//StartCoroutine (WaitForRealSeconds(fadeDelay));
 		fadeAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
-		fadeAnimator.SetTrigger ("FadeOut");
+		//fadeAnimator.SetTrigger ("FadeOut");
 
 		activateCredits = true;
 
@@ -66,6 +68,16 @@ public class MainMenu : MonoBehaviour {
 		StartCoroutine (fadeInDelayer ());
 	}
 
+	public void Next () {
+		Time.timeScale = 0f;
+		fadeAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+		fadeAnimator.SetTrigger ("FadeOut");
+
+		creditsPart2 = true;
+
+		StartCoroutine (fadeInDelayer ());
+	}
+
 	IEnumerator fadeInDelayer () {
 		float start = Time.realtimeSinceStartup;
 		while (Time.realtimeSinceStartup < start + fadeDelay) {
@@ -77,11 +89,21 @@ public class MainMenu : MonoBehaviour {
 			logo.SetActive (false);
 			mainMenuUI.SetActive (false);
 			creditsScreenUI.SetActive (true);
+			credits2UI.SetActive (false);
+			activateCredits = false;
+		}
+
+		if (creditsPart2 == true) {
+			logo.SetActive (false);
+			mainMenuUI.SetActive (false);
+			creditsScreenUI.SetActive (false);
+			credits2UI.SetActive (true);
 			activateCredits = false;
 		}
 			
 		if (activateBackToMain == true) {
 			creditsScreenUI.SetActive (false);
+			credits2UI.SetActive (false);
 			logo.SetActive (true);
 			mainMenuUI.SetActive (true);
 			activateBackToMain = false;
