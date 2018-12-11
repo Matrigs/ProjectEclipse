@@ -36,12 +36,14 @@ public class DoorComponent : ReactiveComponent
             Debug.Log("Aaaaaaaan OPEEEENNN");
             GetComponent<SpriteRenderer>().color = openColor;
             doorParticle.Stop();
+			//doorParts.SetActive (false);
             GetComponent<Collider2D>().enabled = false;
         }
 
         else{
             GetComponent<SpriteRenderer>().color = defaultColor;
             doorParticle.Play();
+			//doorParts.SetActive (true);
             GetComponent<Collider2D>().enabled = true;
         }
     }

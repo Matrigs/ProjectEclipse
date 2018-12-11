@@ -46,8 +46,8 @@ public class Hurtbox : MonoBehaviour, ParticleInterface {
 			ParticleSystem parts = enemyParts.GetComponent<ParticleSystem> ();
 
 			//Rever depois pra não ficar tão cagado
-			float totalDuration = parts.main.duration * 10;
-			Destroy (enemyParts, totalDuration);
+			//float totalDuration = parts.main.duration * 10;
+			//Destroy (enemyParts, totalDuration);
 		}
 	}
 	void OnCollisionEnter2D (Collision2D info) {

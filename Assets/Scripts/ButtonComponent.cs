@@ -76,8 +76,8 @@ public class ButtonComponent : InteractiveComponent
 			ParticleSystem parts = buttonParts.GetComponent<ParticleSystem> ();
 
 			//Rever depois pra não ficar tão cagado
-			float totalDuration = parts.main.duration * 10;
-			Destroy (buttonParts, totalDuration);
+			//float totalDuration = parts.main.duration * 10;
+			//Destroy (buttonParts, totalDuration);
 
             attachedReactionObject.Reaction();
 			if(attachedReactionObject2 != null) attachedReactionObject2.Reaction();

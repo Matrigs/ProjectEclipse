@@ -46,8 +46,8 @@ public class MainMenu : MonoBehaviour {
 		//StartCoroutine (WaitForRealSeconds(fadeDelay));
 		fadeAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
 		//fadeAnimator.SetTrigger ("FadeOut");
-
-		activateCredits = true;
+		SceneManager.LoadScene ("Credits");
+		//activateCredits = true;
 
 		StartCoroutine (fadeInDelayer ());
 	}
